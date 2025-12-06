@@ -1,3 +1,4 @@
-from .train_gcl import train_model
+from .train_wl import train_model as train_wl
+from .train_baseline import train_baseline
 
-__all__ = ["train_model"]
+__all__ = ["train_wl", "train_baseline"]

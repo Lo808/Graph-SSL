@@ -1,4 +1,4 @@
-# wl_gcl/src/trainers/train_gcl.py
+# wl_gcl/src/trainers/train_wl.py
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -9,7 +9,8 @@ import random
 import sys
 
 from wl_gcl.src.utils.wl_core import WLHierarchyEngine
-from wl_gcl.src.models.gin import GINEncoder
+# --- CHANGED: Import the Model Factory instead of specific models ---
+from wl_gcl.src.models import get_model
 from wl_gcl.src.augmentations.graph_augmentor import GraphAugmentor
 from wl_gcl.src.contrastive.dual_view_miner import DualViewMiner
 from wl_gcl.src.contrastive.losses import ExtendedMoCHILoss
@@ -67,12 +68,12 @@ CONFIGS = {
     }
 }
 
-def train_model(dataset_name):
+def train_model(dataset_name, model_type='gin'):
     """
     Main training function logic.
     """
     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"\n=== Launching on {dataset_name.upper()} ===")
+    print(f"\n=== Launching WL-GCL on {dataset_name.upper()} using {model_type.upper()} ===")
     
     # 1. Load Config & Data
     # Fallback to Cora config if dataset specific config is missing
@@ -99,8 +100,17 @@ def train_model(dataset_name):
     force = True if num_nodes < 1000 else False
     wl_engine.build_wl_tree(max_iterations=10, force_convergence=force)
     
-    # 3. Init Models
-    encoder = GINEncoder(input_dim, cfg['hidden'], cfg['out']).to(DEVICE)
+    # 3. Init Models (Dynamic Selection)
+    # Uses the factory 'get_model' we defined in src/models/__init__.py
+    encoder = get_model(
+        name=model_type,
+        input_dim=input_dim,
+        hidden_dim=cfg['hidden'],
+        out_dim=cfg['out'],
+        dropout=0.1,   # Default, could be moved to config if needed
+        tau=2       # Default scaling factor for WLHN
+    ).to(DEVICE)
+
     optimizer = optim.Adam(encoder.parameters(), lr=cfg['lr'], weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg['epochs'])
     
@@ -221,6 +231,8 @@ def linear_probing(encoder, data, num_classes, device):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, default='cora', help='cora, citeseer, texas, wisconsin')
+    # Added model argument
+    parser.add_argument('--model', type=str, default='gin', help='gin, gat, wlhn')
     args = parser.parse_args()
     
-    train_model(args.dataset)
+    train_model(args.dataset, args.model)
