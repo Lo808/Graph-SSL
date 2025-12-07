@@ -6,13 +6,16 @@ The project reproduces and extends the WL-GCL pipeline, and compares it against 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 The codebase is organized as a modular Python package:
 
 ```text
 ├── main.py                     # Entry point for training and evaluation
-├── wl_gcl/                     # Main package
+├── wl_gcl/  
+|   ├── configs/                # Config files
+|   |   ├── baseline.py/    
+|   |   ├── wl.py/           
 │   ├── src/
 │   │   ├── augmentations/      # Graph augmentations (Edge Drop, Feature Masking)
 │   │   ├── contrastive/        # Contrastive losses (MoCHi, InfoNCE) + DualViewMiner
@@ -27,11 +30,11 @@ The codebase is organized as a modular Python package:
 
 ---
 
-## 🛠 Usage
+## Usage
 
 Experiments are launched with the root-level `main.py`.
 
-### 1. Running the WL-GCL Framework (Advanced)
+### 1. Running the WL-GCL Framework
 
 This executes the full pipeline:  
 **WL Structural Mining → Dual Augmentations → MoCHi Loss**.
@@ -47,7 +50,7 @@ python main.py --method wl --dataset cora --model wlhn
 python main.py --method wl --dataset cora --model gat
 ```
 
-### 2. Running the Baseline (Simple)
+### 2. Running the Baseline
 
 This uses **GCN + SimCLR** for contrastive pretraining.
 
@@ -57,11 +60,11 @@ python main.py --method baseline --dataset cora
 
 ---
 
-## ⚙️ Arguments Reference
+## Arguments Reference
 
 | Argument | Default | Description |
 |---------|---------|-------------|
-| `--method` | `wl` | Choose framework: `wl` (ours) or `baseline` (standard GCN). |
+| `--method` | `wl` | Choose framework: `wl` (ours) or `baseline` (standard SimCLR framework). |
 | `--dataset` | `cora` | Supported datasets: `cora`, `citeseer`, `pubmed`, `amazon-photo`, `actor`, `squirrel`, `texas`, ... |
 | `--model` | `gin` | Encoder choices: `gin`, `gcn`, `gat`, `wlhn`. |
 | `--epochs` | `200` | Number of training epochs. |
@@ -70,16 +73,16 @@ python main.py --method baseline --dataset cora
 
 ---
 
-## 🧠 Models Implemented
+## Models Implemented
 
 1. **GIN (Graph Isomorphism Network):** Strong structural baseline.
 2. **GAT (Graph Attention Network):** Attention-weighted neighbor aggregation.
 3. **WLHN (Hyperbolic Weisfeiler–Lehman Network):** Embeds representations in the Poincaré ball to reflect the hierarchical structure extracted by the WL kernel.
-4. **GCN (Baseline):** Used only for the SimCLR comparison pipeline.
+4. **GCN (Baseline):** Graph Convolutional Network
 
 ---
 
-## 📝 Configuration
+## Configuration
 
 For the **WL-GCL framework**, hyperparameters such as:
 
@@ -87,23 +90,13 @@ For the **WL-GCL framework**, hyperparameters such as:
 - number of negative samples
 - learning rate
 - augmentations strengths  
-are tuned separately for each dataset.
+are tuned separately **for each dataset**.
 
-Modify these settings in:
+You can modify these settings in:
 
 ```
-wl_gcl/src/trainers/train_wl.py    # inside the CONFIGS dictionary
+wl_gcl/configs/wl.py
 ```
 
----
 
-## ✔️ Notes
-
-This project includes:
-
-- A WL-based structural hierarchy engine  
-- Dual-view mining (feature + structure)  
-- Full hyperbolic encoder integration  
-- Baselines for fair comparison  
-- Modular clean code suitable for extensions and research use  
 
