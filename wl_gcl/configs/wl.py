@@ -2,46 +2,6 @@
 from dataclasses import dataclass, replace
 
 
-# Base WL Config (typed defaults)
-
-@dataclass(frozen=True)
-class WLConfig:
-    dataset: str = "cora"
-    model: str = "gin"
-
-    hidden_dim: int = 256
-    out_dim: int = 128
-    dropout: float = 0.1
-
-    #GIN specific params
-    tau: float = 2.0
-    num_layers: int = 3
-
-    #GAT specific params
-    heads: int = 4
-
-    # Optimization
-    lr: float = 1e-3
-    weight_decay: float = 1e-5
-    epochs: int = 400
-    scheduler: bool = True
-    log_interval: int = 10
-    device: str = "cpu"
-
-    # WL Mining
-    theta: float = 0.5
-    delta: int = 2
-
-    # Loss
-    temperature: float = 0.5
-    num_negatives: int = 256
-    batch_size: int = 512
-
-    # Augmentation
-    drop_edge_prob: float = 0.4
-    feature_mask_prob: float = 0.1
-
-
 # Dataset–Specific Overrides 
 
 DATASET_DEFAULTS = {
@@ -134,6 +94,48 @@ DATASET_DEFAULTS = {
         "feature_mask_prob": 0.10,
     },
 }
+
+# Base WL Config (typed defaults)
+
+@dataclass(frozen=True)
+class WLConfig:
+    dataset: str = "cora"
+    model: str = "gin"
+
+    hidden_dim: int = 256
+    out_dim: int = 128
+    dropout: float = 0.1
+
+    #GIN specific params
+    tau: float = 2.0
+    num_layers: int = 3
+
+    #GAT specific params
+    heads: int = 4
+
+    # Optimization
+    lr: float = 1e-3
+    weight_decay: float = 1e-5
+    epochs: int = 400
+    scheduler: bool = True
+    log_interval: int = 10
+    device: str = "cpu"
+
+    # WL Mining
+    theta: float = 0.5
+    delta: int = 2
+
+    # Loss
+    temperature: float = 0.5
+    num_negatives: int = 256
+    batch_size: int = 512
+
+    # Augmentation
+    drop_edge_prob: float = 0.4
+    feature_mask_prob: float = 0.1
+
+
+
 
 
 # Factory — merges dataset defaults with base config
