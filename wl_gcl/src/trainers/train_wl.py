@@ -45,7 +45,9 @@ def train_wl(cfg: WLConfig) -> Dict[str, float]:
         hidden_dim=cfg.hidden_dim,
         out_dim=cfg.out_dim,
         dropout=cfg.dropout,
-        tau=cfg.tau,
+        tau=cfg.tau,  #gin
+        num_layers=cfg.num_layers,  #gin
+        heads=cfg.heads  #gat 
     ).to(device)
 
     print(

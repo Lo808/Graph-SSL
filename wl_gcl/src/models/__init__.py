@@ -1,9 +1,7 @@
-from .base_gnn import BaseGCN
-from .gin import GINEncoder
-from .gat import GATEncoder
+from .base_gnn import GCNEncoder, GATEncoder, GINEncoder 
 #from .wlhn import WLHNEncoder
 
-__all__ = ["BaseGCN", "GINEncoder", "GATEncoder", "WLHNEncoder", "get_model"]
+__all__ = ["GCNEncoder", "GINEncoder", "GATEncoder", "WLHNEncoder", "get_model"]
 
 def get_model(name, input_dim, hidden_dim, out_dim, **kwargs):
     """
@@ -12,7 +10,7 @@ def get_model(name, input_dim, hidden_dim, out_dim, **kwargs):
     name = name.lower()
     
     if name == 'gcn':
-        return BaseGCN(
+        return GCNEncoder(
             in_dim=input_dim, 
             hidden_dim=hidden_dim, 
             out_dim=out_dim, 

@@ -12,7 +12,13 @@ class WLConfig:
     hidden_dim: int = 256
     out_dim: int = 128
     dropout: float = 0.1
+
+    #GIN specific params
     tau: float = 2.0
+    num_layers: int = 3
+
+    #GAT specific params
+    heads: int = 4
 
     # Optimization
     lr: float = 1e-3

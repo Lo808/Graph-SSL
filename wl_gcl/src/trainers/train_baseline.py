@@ -9,7 +9,7 @@ import torch
 from torch.optim import Adam
 
 from wl_gcl.src.data_loader.dataset import load_dataset
-from wl_gcl.src.models.base_gnn import BaseGCN
+from wl_gcl.src.models.base_gnn import GCNEncoder
 from wl_gcl.src.contrastive.losses import nt_xent_loss
 from wl_gcl.src.augmentations.graph_augmentor import GraphAugmentor
 from wl_gcl.configs.baseline import cfg as default_cfg
@@ -29,7 +29,7 @@ def train_baseline(cfg: BaselineConfig) -> Dict[str, float]:
     data = dataset.data.to(device)
 
     # Model
-    model = BaseGCN(
+    model = GCNEncoder(
         in_dim=dataset.num_features,
         hidden_dim=cfg.hidden_dim,
         out_dim=cfg.out_dim,
