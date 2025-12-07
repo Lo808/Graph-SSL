@@ -3,9 +3,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# ==========================================
+
 # Standard Losses
-# ==========================================
+
 
 def cosine_sim_matrix(z1: torch.Tensor, z2: torch.Tensor) -> torch.Tensor:
     """
@@ -60,9 +60,7 @@ def nt_xent_loss(z1: torch.Tensor, z2: torch.Tensor, temperature: float = 0.2) -
     return loss.mean()
 
 
-# ==========================================
-# MoCHi
-# ==========================================
+# MoCHi class
 
 class ExtendedMoCHILoss(nn.Module):
     def __init__(self, temperature=0.1, num_negatives=128):
@@ -149,3 +147,34 @@ class ExtendedMoCHILoss(nn.Module):
         harder_negs = F.normalize(harder_negs, dim=1)
         
         return torch.cat([hardest_negs, harder_negs], dim=0)
+
+
+if __name__ == '__main__':
+
+    """
+    Code snippet to visualize the effect of temperature
+    The higher the temperature, the more uniform the probabilities
+    """
+    #Toy dataset
+    torch.manual_seed(0)
+
+    N, d = 4, 8
+
+    # Random embeddings
+    z1 = F.normalize(torch.randn(N, d), dim=1)
+
+    # Positives = noisy copies
+    z2 = F.normalize(0.7 * z1 + 0.3 * torch.randn(N, d), dim=1)
+
+    temperatures = [2.0, 0.5, 0.2, 0.1, 0.05]
+
+    for tau in temperatures:
+        # Inspect how probabilities change
+        sim = cosine_sim_matrix(z1, z2) / tau
+        probs = F.softmax(sim, dim=1)   # (N, N)
+        entropy = -(probs * torch.log(probs + 1e-9)).sum(dim=1).mean()
+
+        print(f"\nTemperature τ = {tau:.3f}")
+        print("Softmax row probabilities:")
+        print(probs)
+        print("Entropy: ", entropy)

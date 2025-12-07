@@ -1,51 +1,174 @@
 # wl_gcl/src/trainers/train_baseline.py
+from __future__ import annotations
+
 import argparse
+from dataclasses import replace
+from typing import Dict
+
 import torch
 from torch.optim import Adam
 
 from wl_gcl.src.data_loader.dataset import load_dataset
 from wl_gcl.src.models.base_gnn import BaseGCN
 from wl_gcl.src.contrastive.losses import nt_xent_loss
+from wl_gcl.src.augmentations.graph_augmentor import GraphAugmentor
+from wl_gcl.configs.baseline import cfg as default_cfg
+from wl_gcl.configs.baseline import BaselineConfig
 
-def train_baseline(args):
+
+@torch.no_grad()
+def compute_accuracy(logits: torch.Tensor, labels: torch.Tensor) -> float:
+    preds = logits.argmax(dim=-1)
+    return (preds == labels).float().mean().item()
+
+
+def evaluate_linear_probe(
+    model: torch.nn.Module,
+    data: torch.Tensor,
+    num_classes: int,
+    device: torch.device,
+    epochs: int = 100,
+    lr: float = 1e-2,
+) -> float:
     """
-    Hala's original simple baseline logic (Simple GCN + SimCLR).
+    Standard linear probe evaluation for node classification.
+
+    Encoder is frozen. A single linear layer is trained on top
+    of the learned embeddings using train_mask and evaluated
+    on test_mask.
+
+    Since only the linear layer is trained:
+
+    -> Any improvement in classification accuracy comes solely from the **quality** of the embeddings.
+
+    -> There is no help from task-specific nonlinear layers.
     """
-    print(f"\n=== Running Baseline (Simple GCN) on {args.dataset.upper()} ===")
-    
-    # 1. Load Data
-    node_dataset = load_dataset(args.dataset)
-    data = node_dataset.data
-    
-    device = torch.device(args.device)
-    data = data.to(device)
 
-    # 2. Init Model
-    model = BaseGCN(
-        in_dim=node_dataset.num_features,
-        hidden_dim=args.hidden_dim,
-        out_dim=args.out_dim,
-        dropout=args.dropout,
-    ).to(device)
+    model.eval()
+    with torch.no_grad():
+        z = model(data.x, data.edge_index)
 
-    optimizer = Adam(model.parameters(), lr=args.lr)
+    z = z.detach()
 
-    # 3. Training Loop
-    print(f"[Baseline] Training for {args.epochs} epochs...")
-    for epoch in range(1, args.epochs + 1):
-        model.train()
+    clf = torch.nn.Linear(z.size(1), num_classes).to(device)
+    optimizer = Adam(clf.parameters(), lr=lr)
+    loss_fn = torch.nn.CrossEntropyLoss()
+
+    train_mask, _, test_mask = data.train_mask, data.val_mask, data.test_mask
+
+    for _ in range(epochs):
+        clf.train()
         optimizer.zero_grad()
 
-        # Simple augmentation: just passing same graph twice (Identity)
-        z1 = model(data.x, data.edge_index)
-        z2 = model(data.x, data.edge_index)
-
-        loss = nt_xent_loss(z1, z2, temperature=args.temperature)
+        logits = clf(z[train_mask])
+        loss = loss_fn(logits, data.y[train_mask])
 
         loss.backward()
         optimizer.step()
 
-        if epoch % args.log_interval == 0:
-            print(f"[Epoch {epoch:03d}] Loss = {loss.item():.4f}")
+    clf.eval()
 
-    print("Baseline Training complete.")
+    with torch.no_grad():
+        test_logits = clf(z[test_mask])
+
+    return compute_accuracy(test_logits, data.y[test_mask])
+
+# Trainer
+def train_baseline(cfg: BaselineConfig) -> Dict[str, float]:
+    """
+    Baseline SimCLR training with GCN encoder and graph augmentations.
+    """
+    device = torch.device(cfg.device)
+
+    # Data
+    dataset = load_dataset(cfg.dataset)
+    data = dataset.data.to(device)
+
+    # Model
+    model = BaseGCN(
+        in_dim=dataset.num_features,
+        hidden_dim=cfg.hidden_dim,
+        out_dim=cfg.out_dim,
+        dropout=cfg.dropout,
+    ).to(device)
+
+    optimizer = Adam(model.parameters(), lr=cfg.lr)
+
+    # Augmentor
+    augmentor = GraphAugmentor(
+        edge_drop_prob=cfg.edge_drop_prob,
+        feature_mask_prob=cfg.feature_mask_prob,
+    )
+
+    # Training
+    for epoch in range(1, cfg.epochs + 1):
+        model.train()
+        optimizer.zero_grad()
+
+        # Two stochastic views
+        x1, edge_index1 = augmentor.augment(data.x, data.edge_index)
+        x2, edge_index2 = augmentor.augment(data.x, data.edge_index)
+
+        z1 = model(x1, edge_index1)
+        z2 = model(x2, edge_index2)
+
+        loss = nt_xent_loss(z1, z2, temperature=cfg.temperature)
+
+        loss.backward()
+        optimizer.step()
+
+        if epoch % cfg.log_interval == 0 or epoch == cfg.epochs:
+            print(
+                f"[Baseline | {cfg.dataset:<12}] "
+                f"Epoch {epoch:03d}/{cfg.epochs}  "
+                f"Loss: {loss.item():.4f}"
+            )
+
+    test_acc = evaluate_linear_probe(
+        model=model,
+        data=data,
+        num_classes=dataset.num_classes,
+        device=device,
+    )
+
+    print(
+        f"[Evaluation | {cfg.dataset:<12}] "
+        f"Linear Probe Accuracy: {test_acc:.4f}"
+    )
+
+    return {
+        "dataset": cfg.dataset,
+        "final_loss": float(loss.item()),
+        "test_accuracy": test_acc,
+        "epochs": cfg.epochs,
+    }
+
+
+# CLI Runner
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run GCN SimCLR baseline.")
+
+    parser.add_argument("--dataset")
+    parser.add_argument("--epochs", type=int)
+    parser.add_argument("--hidden_dim", type=int)
+    parser.add_argument("--out_dim", type=int)
+    parser.add_argument("--lr", type=float)
+    parser.add_argument("--temperature", type=float)
+    parser.add_argument("--dropout", type=float)
+    parser.add_argument("--edge_drop_prob", type=float)
+    parser.add_argument("--feature_mask_prob", type=float)
+    parser.add_argument("--device")
+    parser.add_argument("--log_interval", type=int)
+
+    args = parser.parse_args()
+
+    run_cfg = default_cfg
+    for k, v in vars(args).items():
+        if v is not None:
+            run_cfg = replace(run_cfg, **{k: v})
+
+    train_baseline(run_cfg)
+
+
+if __name__ == "__main__":
+    main()

@@ -49,19 +49,15 @@ def load_dataset(
 ) -> NodeDataset:
     """
     Load standard node classification datasets (Homophilic & Heterophilic).
-    Merged logic: Uses Hala's wrapper but Farouk's robust loading logic.
     """
-    # Normalize name to match case-insensitivity if needed, but let's stick to capitalized for now
-    # Name mapping to handle minor differences
+
     original_name = name
     name_lower = name.lower()
 
-    # --- 1. CITATION (Homophilic) ---
     if name_lower in ["cora", "citeseer", "pubmed"]:
         dataset = Planetoid(root=root, name=name.capitalize())
         data = dataset[0]
 
-    # --- 2. AMAZON (Homophile, Large) ---
     elif name_lower == 'amazon-photo':
         dataset = Amazon(root=root, name='Photo')
         data = dataset[0]
@@ -69,7 +65,6 @@ def load_dataset(
         split = T.RandomNodeSplit(num_val=30, num_test=0, num_train_per_class=20)
         data = split(data)
 
-    # --- 3. WEBKB (Heterophilic, Small) ---
     elif name_lower in ['texas', 'wisconsin', 'cornell']:
         dataset = WebKB(root=root, name=name.capitalize())
         data = dataset[0]
@@ -78,7 +73,6 @@ def load_dataset(
         data.val_mask = data.val_mask[:, 0]
         data.test_mask = data.test_mask[:, 0]
 
-    # --- 4. ACTOR (Heterophilic) ---
     elif name_lower == 'actor':
         dataset = Actor(root=root)
         data = dataset[0]
@@ -87,7 +81,6 @@ def load_dataset(
         data.val_mask = data.val_mask[:, 0]
         data.test_mask = data.test_mask[:, 0]
 
-    # --- 5. WIKIPEDIA (Heterophilic, Dense) ---
     elif name_lower in ['squirrel', 'chameleon']:
         dataset = WikipediaNetwork(root=root, name=name.capitalize(), geom_gcn_preprocess=True)
         data = dataset[0]
@@ -99,17 +92,17 @@ def load_dataset(
     else:
         raise ValueError(f"Unknown dataset: {name}")
 
-    # --- POST PROCESSING (Shared Logic) ---
+
     
-    # 1. Feature Normalization
+    # Feature Normalization
     if normalize_features and data.x is not None:
         data.x = normalize_features_fn(data.x)
 
-    # 2. Undirected Edges (Crucial for WL and GIN)
+    # Undirected Edges (for WL and GIN)
     if not data.is_undirected():
         data.edge_index = to_undirected(data.edge_index)
 
-    # 3. Validation Checks
+    # Sanity Check
     assert data.x is not None, f"{name}: missing node features."
     assert data.y is not None, f"{name}: missing node labels."
     assert data.edge_index is not None, f"{name}: missing edge_index."
@@ -132,3 +125,47 @@ def load_dataset(
 def get_splits(data: Data) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """Return train / val / test boolean masks."""
     return data.train_mask, data.val_mask, data.test_mask
+
+
+
+if __name__ == "__main__":
+
+    """
+    Data loader sanity check
+    """
+    datasets = [
+        "Cora",
+        "Citeseer",
+        "Pubmed",
+        "Actor",
+        "Squirrel",
+        "Chameleon",
+        "Texas",
+        "Wisconsin",
+        "Cornell",
+        "Amazon-Photo",
+    ]
+
+    print("\nDataset Overview\n" + "-" * 80)
+    print(f"{'Name':<15}{'Nodes':>8}{'Edges':>10}{'Features':>12}{'Classes':>10}{'Train':>8}{'Val':>8}{'Test':>8}")
+    print("-" * 80)
+
+    for name in datasets:
+        ds = load_dataset(name)
+        data = ds.data
+
+        train, val, test = get_splits(data)
+
+        print(
+            f"{name:<15}"
+            f"{data.num_nodes:>8}"
+            f"{data.edge_index.size(1):>10}"
+            f"{ds.num_features:>12}"
+            f"{ds.num_classes:>10}"
+            f"{train.sum().item():>8}"
+            f"{val.sum().item():>8}"
+            f"{test.sum().item():>8}"
+        )
+
+    print("-" * 80)
+

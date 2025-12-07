@@ -78,11 +78,11 @@ class DualViewMiner:
             P_feat = p_feat_list[i]
             P_struct = p_struct_list[i]
             
-            # --- INTERSECTION (Green in Fig 1) ---
+            #  INTERSECTION 
             # Nodes close in BOTH views (Reliable positives)
             P_inter = P_feat.intersection(P_struct)
             
-            # --- HARD NEGATIVES (Gray in Fig 1) ---
+            #  HARD NEGATIVES 
             # (P_feat U P_struct) \ P_inter
             # Equivalent to symmetric difference (XOR)
             N_hard = P_feat.symmetric_difference(P_struct)
@@ -101,7 +101,7 @@ if __name__ == "__main__":
         print("Could not import WLHierarchyEngine. Make sure you run this from the project root.")
         sys.exit(1)
 
-    # --- 1. SETUP ---
+    # Toy example
     nodes = [1, 2, 3, 4, 5, 6, 7, 8]
     edges = [(1, 2), (1, 8), (2, 3), (8, 3), (3, 4), (3, 7), (4, 5), (7, 6), (5, 6)]
     
@@ -114,11 +114,10 @@ if __name__ == "__main__":
     torch.manual_seed(42)
     embeddings = torch.randn(8, 16) 
     
-    # --- 2. THE MINER ---
+    # Dual view miner
     miner = DualViewMiner(wl_engine, nodes, theta=0.0, delta=2)
     
-    # --- 3. EXECUTION ---
-    print("\n--- Mining Step ---")
+    print("\n[Mining Step]")
     positives, hard_negatives = miner.mine_candidates(embeddings)
     
     target_idx = 4 # Index of node 5

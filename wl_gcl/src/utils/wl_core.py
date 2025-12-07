@@ -24,7 +24,7 @@ class WLHierarchyEngine:
 
     def build_wl_tree(self, max_iterations=5, force_convergence=False):
         """Builds the Weisfeiler-Lehman Hierarchical Tree."""
-        print(f"--- Building WL Tree (Convergence Mode: {force_convergence}) ---")
+        print(f"Building WL Tree (Convergence Mode: {force_convergence})...")
         temp_tree = nx.DiGraph()
         
         limit = len(self.nodes) if force_convergence else max_iterations
