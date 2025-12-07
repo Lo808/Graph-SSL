@@ -1,29 +1,63 @@
-import sys
-import os
+# wl_gcl/main.py
+from __future__ import annotations
+
 import argparse
+from dataclasses import replace
 
-sys.path.append(os.getcwd())
+from wl_gcl.src.trainers.train_wl import train_wl
+from wl_gcl.src.trainers.train_baseline import train_baseline
 
-from wl_gcl.src.trainers import train_wl, train_baseline
+from wl_gcl.configs.wl import make_wl_cfg
+from wl_gcl.configs.baseline import cfg as baseline_cfg
 
-if __name__ == "__main__":
+
+def main() -> None:
     parser = argparse.ArgumentParser(description="Graph SSL Training Hub")
-    
-    parser.add_argument('--method', type=str, default='wl', choices=['wl', 'baseline'], 
-                        help="Choose 'wl' for your advanced model, 'baseline' for the simple GCN")
-    parser.add_argument('--dataset', type=str, default='cora', help='Dataset name')
-    
-    # NEW ARGUMENT:
-    parser.add_argument('--model', type=str, default='gin', choices=['gcn', 'gin', 'gat', 'wlhn'],
-                        help="Backbone GNN to use (default: gin)")
+
+    parser.add_argument(
+        "--method",
+        choices=["wl", "baseline"],
+        default="wl",
+        help="Training method.",
+    )
+    parser.add_argument(
+        "--dataset",
+        default="cora",
+        help="Dataset name.",
+    )
+    parser.add_argument(
+        "--model",
+        choices=["gcn", "gin", "gat", "wlhn"],
+        default="gin",
+        help="GNN backbone (WL-GCL only).",
+    )
 
     args = parser.parse_args()
-    
-    if args.method == 'wl':
-        print(f">>> Mode: WL-GCL | Model: {args.model.upper()}")
-        # Pass the model argument here
-        train_wl(args.dataset, model_type=args.model)
-        
-    elif args.method == 'baseline':
-        print(">>> Mode: Baseline (Simple)")
-        train_baseline(args)
+
+    # WL-GCL
+    if args.method == "wl":
+        cfg = make_wl_cfg(args.dataset)
+        cfg = replace(cfg, model=args.model)
+
+        print(
+            f"[RUN] Method=WL-GCL | "
+            f"Dataset={cfg.dataset.upper()} | "
+            f"Model={cfg.model.upper()}"
+        )
+
+        train_wl(cfg)
+
+    # Baseline
+    else:
+        cfg = replace(baseline_cfg, dataset=args.dataset)
+
+        print(
+            f"[RUN] Method=BASELINE | "
+            f"Dataset={cfg.dataset.upper()}"
+        )
+
+        train_baseline(cfg)
+
+
+if __name__ == "__main__":
+    main()
