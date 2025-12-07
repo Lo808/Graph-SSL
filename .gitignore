@@ -8,9 +8,3 @@ venv/
 
 # --- Datasets---
 data/
-# --- Temporary/Old Files ---
-WLHN.py
-test_wlhn.py
-pipeline.ipynb
-main_debug.py
-halatestdemos.ipynb
