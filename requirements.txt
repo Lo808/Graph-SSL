@@ -1,5 +1,8 @@
-torch
-torch_geometric
-numpy
-pyyaml
-tqdm
+geoopt==0.5.1
+matplotlib==3.10.7
+networkx==3.2.1
+numpy==2.2.6
+scipy==1.13.1
+torch==2.9.1
+torch_geometric==2.7.0
+tqdm==4.66.6
