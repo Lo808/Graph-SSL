@@ -6,8 +6,10 @@ from dataclasses import replace
 
 from wl_gcl.src.trainers.train_wl import train_wl
 from wl_gcl.src.trainers.train_baseline import train_baseline
+from wl_gcl.src.trainers.train_wl_hierarchy import train_wl_hierarchy
 
 from wl_gcl.configs.wl import make_wl_cfg
+from wl_gcl.configs.wl_hierarchy import make_wl_hierarchy_cfg
 from wl_gcl.configs.baseline import cfg as baseline_cfg
 
 
@@ -16,7 +18,7 @@ def main() -> None:
 
     parser.add_argument(
         "--method",
-        choices=["wl", "baseline"],
+        choices=["wl", "baseline", "wl_hierarchy"],
         default="wl",
         help="Training method.",
     )
@@ -29,12 +31,14 @@ def main() -> None:
         "--model",
         choices=["gcn", "gin", "gat", "wlhn"],
         default="gin",
-        help="GNN backbone (WL-GCL only).",
+        help="GNN backbone.",
     )
 
     args = parser.parse_args()
 
-    # WL-GCL
+    # ------------------------------------------------------------
+    # WL-GCL (original)
+    # ------------------------------------------------------------
     if args.method == "wl":
         cfg = make_wl_cfg(args.dataset)
         cfg = replace(cfg, model=args.model)
@@ -47,7 +51,24 @@ def main() -> None:
 
         train_wl(cfg)
 
+    # ------------------------------------------------------------
+    # WL-Hierarchy (new method)
+    # ------------------------------------------------------------
+    elif args.method == "wl_hierarchy":
+        cfg = make_wl_hierarchy_cfg(args.dataset)
+        cfg = replace(cfg, model=args.model)
+
+        print(
+            f"[RUN] Method=WL-HIERARCHY | "
+            f"Dataset={cfg.dataset.upper()} | "
+            f"Model={cfg.model.upper()}"
+        )
+
+        train_wl_hierarchy(cfg)
+
+    # ------------------------------------------------------------
     # Baseline
+    # ------------------------------------------------------------
     else:
         cfg = replace(baseline_cfg, dataset=args.dataset)
 

@@ -45,67 +45,50 @@ def hierarchy_regularization(engine, z, levels, nodes=None):
 
     return reg / len(list(nodes))
 
-def wl_contrastive_loss(
-    engine,
-    z,
-    level,
-    num_negatives=50,
-    temperature=0.2,
-):
+def wl_contrastive_loss(engine, z, level, temperature=0.5):
     """
-    WL-guided InfoNCE.
+    Fully vectorized WL-InfoNCE.
 
-    For each node v at WL level t:
-        positives = nodes in same WL cluster
-        hard negatives = nodes that split at this level
-        easy negatives = random other nodes
+    z: (N, d) normalized embeddings
     """
 
-    N = z.size(0)
     device = z.device
-    loss = torch.tensor(0.0, device=device)
+    N = z.size(0)
 
-    for v in range(N):
-        pos = engine.get_cluster_at_level(v, level)
-        if pos is None or len(pos) <= 1:
+    # ------------------------------------------------------------
+    # 1) Similarity matrix (N x N)
+    # ------------------------------------------------------------
+    S = torch.mm(z, z.t()) / temperature
+    expS = torch.exp(S)
+
+    # ------------------------------------------------------------
+    # 2) Build WL positive mask
+    # mask_pos[u,v] = 1 if v in same WL cluster at 'level'
+    # ------------------------------------------------------------
+    mask_pos = torch.zeros((N, N), device=device, dtype=torch.float32)
+
+    for u in range(N):
+        cluster = engine.get_cluster_at_level(u, level)
+        if cluster is None:
             continue
+        mask_pos[u, cluster] = 1.0
 
-        # pick one positive different from v
-        pos_candidates = [u for u in pos if u != v]
-        u_pos = random.choice(pos_candidates)
+    # remove self-similarity from positives
+    mask_pos.fill_diagonal_(0.0)
 
-        # hard negatives
-        hard_neg = engine.get_hard_negatives(v, level)
+    # ------------------------------------------------------------
+    # 3) Negative mask = everything else
+    # ------------------------------------------------------------
+    mask_neg = 1.0 - mask_pos
 
-        # easy negatives (random far nodes)
-        all_nodes = set(range(N))
-        forbidden = set(pos) | {v}
-        easy_pool = list(all_nodes - forbidden)
+    # ------------------------------------------------------------
+    # 4) InfoNCE
+    # ------------------------------------------------------------
+    pos_sum = (expS * mask_pos).sum(dim=1)
+    neg_sum = (expS * mask_neg).sum(dim=1)
 
-        easy_neg = random.sample(
-            easy_pool, 
-            min(num_negatives, len(easy_pool))
-        )
+    # avoid division by zero
+    eps = 1e-9
+    loss = -torch.log((pos_sum + eps) / (pos_sum + neg_sum + eps))
 
-        negatives = hard_neg + easy_neg
-        if len(negatives) == 0:
-            continue
-
-        z_v = z[v]
-        z_pos = z[u_pos]
-        z_negs = z[negatives]
-
-        # cosine similarities
-        sim_pos = F.cosine_similarity(z_v, z_pos, dim=0) / temperature
-        sim_negs = F.cosine_similarity(
-            z_v.unsqueeze(0),
-            z_negs,
-            dim=1
-        ) / temperature
-
-        numerator = torch.exp(sim_pos)
-        denominator = numerator + torch.exp(sim_negs).sum()
-
-        loss = loss - torch.log(numerator / denominator)
-
-    return loss / N
+    return loss.mean()
