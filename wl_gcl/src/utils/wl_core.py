@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import hashlib
 from collections import defaultdict, deque
+import torch
 
 class WLHierarchyEngine:
     def __init__(self, nodes, edges):
@@ -13,12 +14,17 @@ class WLHierarchyEngine:
             self.adj[u].append(v)
             self.adj[v].append(u)
             
-        # Internal structures for the tree (Pure Python, no NX for queries)
+        # Internal structures for the tree
         self.tree_adj = defaultdict(list)
         self.leaf_mapping = {} 
         self.tree_members = {}
         self.is_fitted = False
         
+        #latest modifs
+        self.parent = {}
+        self.parent["root"] = None
+        self.node_path = defaultdict(dict)
+
         # Keep a light NX graph only for visualization/LCA calculation if needed
         self._viz_graph = None 
 
@@ -34,6 +40,9 @@ class WLHierarchyEngine:
         current_labels = {n: "0" for n in self.nodes}
         root_id = "root"
         self.tree_members[root_id] = self.nodes
+        for n in self.nodes:
+            self.node_path[n][0] = "root"
+
         parent_in_tree = {n: root_id for n in self.nodes}
         
         previous_unique_count = 1
@@ -71,6 +80,7 @@ class WLHierarchyEngine:
                 # Add edges (Undirected view for BFS)
                 self.tree_adj[parent_id].append(tree_node_id)
                 self.tree_adj[tree_node_id].append(parent_id)
+                self.parent[tree_node_id] = parent_id
                 
                 self.tree_members[tree_node_id] = members
                 
@@ -78,6 +88,8 @@ class WLHierarchyEngine:
                 for m in members:
                     parent_in_tree[m] = tree_node_id
                     self.leaf_mapping[m] = tree_node_id
+                    self.node_path[m][it] = tree_node_id
+
                 
                 # Update Visualization Graph
                 temp_tree.add_edge(parent_id, tree_node_id)
@@ -171,3 +183,92 @@ class WLHierarchyEngine:
                 node_color=node_colors, cmap=plt.cm.coolwarm, node_size=600, font_weight='bold')
         plt.title("Generated WL Hierarchy")
         plt.show()
+    
+    #New features
+    def get_cluster_id(self, node, level):
+        return self.node_path[node].get(level)
+
+    def get_cluster_at_level(self, node, level):
+        cid = self.get_cluster_id(node, level)
+        return self.tree_members.get(cid)
+
+    def get_hard_negatives(self, node, level):
+        prev = set(self.get_cluster_at_level(node, level-1))
+        now  = set(self.get_cluster_at_level(node, level))
+        return list(prev - now - {node})
+    
+    def get_wl_path(self, node):
+        """
+        Returns the WL path of a node as a list:
+        [(level, cluster_id), ...]
+        """
+        path = []
+        levels = sorted(self.node_path[node].keys())
+        for t in levels:
+            path.append((t, self.node_path[node][t]))
+        return path
+    
+    def get_wl_cluster_sequence(self, node):
+        """
+        Returns [C^(0)(v), C^(1)(v), ..., C^(T)(v)]
+        """
+        levels = sorted(self.node_path[node].keys())
+        return [self.node_path[node][t] for t in levels]
+    def compute_centroids(self, z, level):
+        """
+        Compute WL cluster centroids at a given level.
+        z: tensor [N, d] on device
+        """
+        device = z.device
+        centroids = {}
+
+        for tree_node, members in self.tree_members.items():
+            if self._viz_graph.nodes[tree_node]['subset'] == level:
+                idx = torch.tensor(members, device=device, dtype=torch.long)
+                centroids[tree_node] = z.index_select(0, idx).mean(dim=0)
+
+        return centroids
+    def get_wl_distance(self, u, v):
+        """
+        WL structural distance as defined by the professor:
+        d_WL(u,v) = T - max{t : C^(t)(u) = C^(t)(v)}
+        """
+        path_u = self.node_path[u]
+        path_v = self.node_path[v]
+
+        common_levels = set(path_u.keys()).intersection(path_v.keys())
+
+        # find deepest level where they share the same cluster
+        t_star = max(
+            t for t in common_levels
+            if path_u[t] == path_v[t]
+        )
+
+        T = max(max(path_u.keys()), max(path_v.keys()))
+        return T - t_star
+    def get_wl_similarity(self, u, v):
+        """
+        Normalized similarity in [0,1]
+        """
+        path_u = self.node_path[u]
+        T = max(path_u.keys())
+        return 1.0 - self.get_wl_distance(u, v) / T
+    
+    def get_level_targets(self, level):
+        """
+        Returns:
+            y: LongTensor [N] with class indices for WL clusters at this level
+            cid2idx: mapping from cluster_id -> class index
+            num_classes: number of WL clusters at this level
+        """
+        cids = [self.get_cluster_id(v, level) for v in self.nodes]
+
+        if any(cid is None for cid in cids):
+            return None, None, None
+
+        unique_cids = sorted(set(cids))
+        cid2idx = {cid: i for i, cid in enumerate(unique_cids)}
+        y = torch.tensor([cid2idx[cid] for cid in cids], dtype=torch.long)
+
+        return y, cid2idx, len(unique_cids)
+

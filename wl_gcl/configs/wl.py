@@ -1,6 +1,6 @@
 # wl_gcl/configs/wl.py
 from dataclasses import dataclass, replace
-
+import torch
 
 # Dataset–Specific Overrides 
 
@@ -119,7 +119,7 @@ class WLConfig:
     epochs: int = 400
     scheduler: bool = True
     log_interval: int = 10
-    device: str = "cpu"
+    device: str = "cuda" if torch.cuda.is_available() else "cpu"
 
     # WL Mining
     theta: float = 0.5
