@@ -31,7 +31,7 @@ DATASET_DEFAULTS = {
         "lr": 0.0005,
         "hidden_dim": 512,
         "out_dim": 256,
-        "epochs": 200,
+        "epochs": 500,
         "theta": 0.7,
         "temperature": 0.2,
         "num_negatives": 512,
