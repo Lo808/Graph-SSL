@@ -13,7 +13,8 @@ from torch_geometric.datasets import (
     Actor,
     WikipediaNetwork,
     WebKB,
-    Amazon
+    Amazon,
+    ZINC
 )
 
 DatasetName = Literal[
@@ -61,9 +62,15 @@ def load_dataset(
     elif name_lower == 'amazon-photo':
         dataset = Amazon(root=root, name='Photo')
         data = dataset[0]
-        # Generate random split if missing
-        split = T.RandomNodeSplit(num_val=30, num_test=0, num_train_per_class=20)
+
+        split = T.RandomNodeSplit(
+            num_train_per_class=20,
+            num_val=0.1,    # 10% validation
+            num_test=0.2   # 20% test
+        )
+
         data = split(data)
+
 
     elif name_lower in ['texas', 'wisconsin', 'cornell']:
         dataset = WebKB(root=root, name=name.capitalize())
@@ -88,6 +95,14 @@ def load_dataset(
         data.train_mask = data.train_mask[:, 0]
         data.val_mask = data.val_mask[:, 0]
         data.test_mask = data.test_mask[:, 0]
+
+    elif name_lower == 'zinc':
+        dataset = ZINC(root=root, subset=True, split='train')
+        data = dataset[0] 
+        
+        data.train_mask = torch.ones(data.num_nodes, dtype=torch.bool)
+        data.val_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
+        data.test_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
 
     else:
         raise ValueError(f"Unknown dataset: {name}")
