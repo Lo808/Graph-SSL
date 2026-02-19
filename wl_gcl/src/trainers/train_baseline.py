@@ -9,10 +9,10 @@ import torch
 from torch.optim import Adam
 
 from wl_gcl.src.data_loader.dataset import load_dataset
-from wl_gcl.src.models.base_gnn import GCNEncoder
+from wl_gcl.src.models import get_model
 from wl_gcl.src.contrastive.losses import nt_xent_loss
 from wl_gcl.src.augmentations.graph_augmentor import GraphAugmentor
-from wl_gcl.configs.baseline import cfg as default_cfg
+from wl_gcl.configs.baseline import make_baseline_cfg
 from wl_gcl.configs.baseline import BaselineConfig
 from wl_gcl.src.trainers.eval import evaluate_linear_probe
 
@@ -29,18 +29,22 @@ def train_baseline(cfg: BaselineConfig) -> Dict[str, float]:
     data = dataset.data.to(device)
 
     # Model
-    model = GCNEncoder(
-        in_dim=dataset.num_features,
+    model =  get_model(
+        name=cfg.model,
+        input_dim=dataset.num_features,
         hidden_dim=cfg.hidden_dim,
         out_dim=cfg.out_dim,
         dropout=cfg.dropout,
+        tau=cfg.tau,  #gin
+        num_layers=cfg.num_layers,  #gin
+        heads=cfg.heads  #gat 
     ).to(device)
 
     optimizer = Adam(model.parameters(), lr=cfg.lr)
 
     # Augmentor
     augmentor = GraphAugmentor(
-        edge_drop_prob=cfg.edge_drop_prob,
+        edge_drop_prob=cfg.drop_edge_prob,
         feature_mask_prob=cfg.feature_mask_prob,
     )
 
@@ -106,10 +110,11 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    run_cfg = default_cfg
+    run_cfg = make_baseline_cfg(args.dataset or "cora")
     for k, v in vars(args).items():
         if v is not None:
             run_cfg = replace(run_cfg, **{k: v})
+    print(run_cfg)
 
     train_baseline(run_cfg)
 
