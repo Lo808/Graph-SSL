@@ -4,6 +4,9 @@ from __future__ import annotations
 import argparse
 from dataclasses import replace
 from typing import Dict
+import copy
+from pathlib import Path
+import json
 
 import torch
 from torch.optim import Adam
@@ -48,6 +51,7 @@ def train_baseline(cfg: BaselineConfig) -> Dict[str, float]:
         feature_mask_prob=cfg.feature_mask_prob,
     )
 
+    best_acc = 0.0
     # Training
     for epoch in range(1, cfg.epochs + 1):
         model.train()
@@ -66,29 +70,46 @@ def train_baseline(cfg: BaselineConfig) -> Dict[str, float]:
         optimizer.step()
 
         if epoch % cfg.log_interval == 0 or epoch == cfg.epochs:
+            acc = evaluate_linear_probe(
+                model,
+                data,
+                dataset.num_classes,
+                device,
+            )
+
+            if acc > best_acc:
+                best_acc = acc
+                best_state = copy.deepcopy(model.state_dict())
+
             print(
                 f"[Baseline | {cfg.dataset:<12}] "
                 f"Epoch {epoch:03d}/{cfg.epochs}  "
                 f"Loss: {loss.item():.4f}"
             )
 
-    test_acc = evaluate_linear_probe(
-        model=model,
-        data=data,
-        num_classes=dataset.num_classes,
-        device=device,
-    )
+    print(f"[WL-BASELINE | {cfg.dataset.upper():<12}] Best Acc: {best_acc:.4f}")
 
-    print(
-        f"[Evaluation | {cfg.dataset:<12}] "
-        f"Linear Probe Accuracy: {test_acc:.4f}"
-    )
+    best_ckpt_path = None
+
+    if getattr(cfg, "save_best", True) and best_state is not None:
+        out_dir = Path(getattr(cfg, "output_dir", "runs/wl_hierarchy")) / cfg.dataset / cfg.model
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        best_ckpt_path = out_dir / "best_encoder.pt"
+        torch.save(
+            {
+                "encoder_state_dict": best_state,
+                "best_accuracy": best_acc,
+                "cfg": cfg.__dict__ if hasattr(cfg, "__dict__") else None,
+            },
+            best_ckpt_path,
+        )
 
     return {
-        "dataset": cfg.dataset,
-        "final_loss": float(loss.item()),
-        "test_accuracy": test_acc,
-        "epochs": cfg.epochs,
+        "dataset": str(cfg.dataset),
+        "best_accuracy": float(best_acc),
+        "epochs": int(cfg.epochs),
+        "best_ckpt_path": str(best_ckpt_path) if best_ckpt_path is not None else None,
     }
 
 

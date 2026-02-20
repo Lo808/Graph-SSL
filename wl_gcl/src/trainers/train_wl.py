@@ -5,6 +5,8 @@ import copy
 from dataclasses import replace
 from typing import Dict
 import random
+from pathlib import Path
+import json
 
 import torch
 from torch.optim import Adam
@@ -173,12 +175,28 @@ def train_wl(cfg: WLConfig) -> Dict[str, float]:
 
     print(f"[WL-GCL | {cfg.dataset.upper():<12}] Best Acc: {best_acc:.4f}")
 
-    return {
-        "dataset": cfg.dataset,
-        "best_accuracy": best_acc,
-        "epochs": cfg.epochs,
-    }
+    best_ckpt_path = None
 
+    if getattr(cfg, "save_best", True) and best_state is not None:
+        out_dir = Path(getattr(cfg, "output_dir", "runs/wl_hierarchy")) / cfg.dataset / cfg.model
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        best_ckpt_path = out_dir / "best_encoder.pt"
+        torch.save(
+            {
+                "encoder_state_dict": best_state,
+                "best_accuracy": best_acc,
+                "cfg": cfg.__dict__ if hasattr(cfg, "__dict__") else None,
+            },
+            best_ckpt_path,
+        )
+
+    return {
+        "dataset": str(cfg.dataset),
+        "best_accuracy": float(best_acc),
+        "epochs": int(cfg.epochs),
+        "best_ckpt_path": str(best_ckpt_path) if best_ckpt_path is not None else None,
+    }
 
 # CLI
 

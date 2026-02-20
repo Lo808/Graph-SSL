@@ -18,7 +18,7 @@ def main() -> None:
 
     parser.add_argument(
         "--method",
-        choices=["wl", "baseline", "wl_hierarchy"],
+        choices=["wl", "baseline", "wl_hierarchy", "wl_hierarchy_bis"],
         default="wl",
         help="Training method.",
     )
@@ -33,12 +33,16 @@ def main() -> None:
         default="gin",
         help="GNN backbone.",
     )
+    parser.add_argument(
+        "--loss",
+        choices=["ce", "triplet"],
+        default="triplet",
+        help="Alignment Loss",
+    )
 
     args = parser.parse_args()
 
-    # ------------------------------------------------------------
-    # WL-GCL (original)
-    # ------------------------------------------------------------
+    # WL-GCL
     if args.method == "wl":
         cfg = make_wl_cfg(args.dataset)
         cfg = replace(cfg, model=args.model)
@@ -51,9 +55,7 @@ def main() -> None:
 
         train_wl(cfg)
 
-    # ------------------------------------------------------------
-    # WL-Hierarchy (new method)
-    # ------------------------------------------------------------
+    # WL-Hierarchy 
     elif args.method == "wl_hierarchy":
         cfg = make_wl_hierarchy_cfg(args.dataset)
         cfg = replace(cfg, model=args.model)
@@ -66,9 +68,7 @@ def main() -> None:
 
         train_wl_hierarchy(cfg)
 
-    # ------------------------------------------------------------
     # Baseline
-    # ------------------------------------------------------------
     else:
         cfg = make_baseline_cfg(args.dataset)
         cfg = replace(cfg, model=args.model)

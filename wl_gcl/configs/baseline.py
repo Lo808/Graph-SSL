@@ -99,13 +99,15 @@ class BaselineConfig:
     log_interval: int = 10
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     scheduler: bool = True
+    batch_size: int = 512
 
     # Graph augmentation
     drop_edge_prob: float = 0.4
     feature_mask_prob: float = 0.1
 
-    temperature: float = 0.5
-    batch_size: int = 512
+    save_best: bool = False
+    output_dir: str = "runs/baseline"
+    
 
 
 

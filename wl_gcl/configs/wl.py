@@ -134,6 +134,9 @@ class WLConfig:
     drop_edge_prob: float = 0.4
     feature_mask_prob: float = 0.1
 
+    save_best: bool = False
+    output_dir: str = "runs/wl"
+
 
 
 

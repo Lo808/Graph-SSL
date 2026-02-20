@@ -3,11 +3,6 @@ from dataclasses import dataclass, replace
 import torch
 
 
-# ------------------------------------------------------------
-# Dataset–Specific Overrides (very light at the beginning)
-# You can tune later after experiments
-# ------------------------------------------------------------
-
 DATASET_DEFAULTS = {
     "cora": {
         "lr": 5e-4,
@@ -35,10 +30,6 @@ DATASET_DEFAULTS = {
     },
 }
 
-
-# ------------------------------------------------------------
-# WL-Hierarchy Config
-# ------------------------------------------------------------
 
 @dataclass(frozen=True)
 class WLHierarchyConfig:
@@ -75,10 +66,9 @@ class WLHierarchyConfig:
     temperature: float = 0.5
     num_negatives: int = 256
 
-
-# ------------------------------------------------------------
-# Factory
-# ------------------------------------------------------------
+    save_best: bool = False
+    output_dir: str = "runs/wl_hierarchy"
+    
 
 def make_wl_hierarchy_cfg(dataset: str) -> WLHierarchyConfig:
     base = WLHierarchyConfig(dataset=dataset)
