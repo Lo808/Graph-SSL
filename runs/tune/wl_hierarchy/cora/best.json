@@ -1,0 +1,36 @@
+{
+  "cfg": {
+    "dataset": "cora",
+    "device": "cpu",
+    "dropout": 0.0,
+    "epochs": 150,
+    "heads": 8,
+    "hidden_dim": 128,
+    "lambda_hier": 0.001,
+    "lambda_nce": 0.5,
+    "log_interval": 10,
+    "lr": 0.0003,
+    "model": "gin",
+    "num_layers": 4,
+    "num_negatives": 64,
+    "out_dim": 256,
+    "output_dir": "runs/wl_hierarchy",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.2,
+    "warmup": 40,
+    "weight_decay": 1e-05,
+    "wl_max_iter": 10
+  },
+  "metrics": {
+    "best_accuracy": 0.5789999961853027,
+    "best_ckpt_path": null,
+    "dataset": "cora",
+    "epochs": 150
+  },
+  "seed": 7,
+  "trainer": "wl_hierarchy",
+  "trial_id": "ae9397aa8f95",
+  "wall_time_sec": 210.307
+}
