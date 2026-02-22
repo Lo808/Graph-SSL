@@ -1,0 +1,36 @@
+{
+  "cfg": {
+    "dataset": "citeseer",
+    "device": "cpu",
+    "dropout": 0.1,
+    "epochs": 150,
+    "heads": 4,
+    "hidden_dim": 512,
+    "lambda_hier": 0.001,
+    "lambda_nce": 0.5,
+    "log_interval": 10,
+    "lr": 0.0003,
+    "model": "gin",
+    "num_layers": 4,
+    "num_negatives": 512,
+    "out_dim": 128,
+    "output_dir": "runs/wl_hierarchy",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.5,
+    "warmup": 20,
+    "weight_decay": 0.0001,
+    "wl_max_iter": 5
+  },
+  "metrics": {
+    "best_accuracy": 0.4090000092983246,
+    "best_ckpt_path": null,
+    "dataset": "citeseer",
+    "epochs": 150
+  },
+  "seed": 7,
+  "trainer": "wl_hierarchy",
+  "trial_id": "3bf77b90474d",
+  "wall_time_sec": 534.809
+}
