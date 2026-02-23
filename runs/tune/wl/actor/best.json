@@ -1,0 +1,37 @@
+{
+  "cfg": {
+    "batch_size": 512,
+    "dataset": "actor",
+    "delta": 2,
+    "device": "cpu",
+    "drop_edge_prob": 0.2,
+    "dropout": 0.0,
+    "epochs": 150,
+    "feature_mask_prob": 0.0,
+    "heads": 8,
+    "hidden_dim": 512,
+    "log_interval": 10,
+    "lr": 0.001,
+    "model": "gin",
+    "num_layers": 3,
+    "num_negatives": 256,
+    "out_dim": 64,
+    "output_dir": "runs/wl",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 1.0,
+    "temperature": 0.5,
+    "theta": 0.7,
+    "weight_decay": 1e-05
+  },
+  "metrics": {
+    "best_accuracy": 0.26710525155067444,
+    "best_ckpt_path": null,
+    "dataset": "actor",
+    "epochs": 150
+  },
+  "seed": 7,
+  "trainer": "wl",
+  "trial_id": "7080e9ffbfb9",
+  "wall_time_sec": 308.121
+}

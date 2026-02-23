@@ -1,0 +1,37 @@
+{
+  "cfg": {
+    "batch_size": 1024,
+    "dataset": "citeseer",
+    "delta": 3,
+    "device": "cpu",
+    "drop_edge_prob": 0.4,
+    "dropout": 0.1,
+    "epochs": 150,
+    "feature_mask_prob": 0.0,
+    "heads": 4,
+    "hidden_dim": 256,
+    "log_interval": 10,
+    "lr": 0.0001,
+    "model": "gin",
+    "num_layers": 4,
+    "num_negatives": 128,
+    "out_dim": 128,
+    "output_dir": "runs/wl",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 1.0,
+    "temperature": 0.5,
+    "theta": 0.7,
+    "weight_decay": 1e-06
+  },
+  "metrics": {
+    "best_accuracy": 0.5659999847412109,
+    "best_ckpt_path": null,
+    "dataset": "citeseer",
+    "epochs": 150
+  },
+  "seed": 7,
+  "trainer": "wl",
+  "trial_id": "b1fcb4d31187",
+  "wall_time_sec": 513.269
+}

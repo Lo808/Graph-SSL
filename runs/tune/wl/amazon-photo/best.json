@@ -1,0 +1,37 @@
+{
+  "cfg": {
+    "batch_size": 512,
+    "dataset": "amazon-photo",
+    "delta": 1,
+    "device": "cpu",
+    "drop_edge_prob": 0.4,
+    "dropout": 0.5,
+    "epochs": 150,
+    "feature_mask_prob": 0.1,
+    "heads": 2,
+    "hidden_dim": 256,
+    "log_interval": 10,
+    "lr": 0.001,
+    "model": "gin",
+    "num_layers": 2,
+    "num_negatives": 128,
+    "out_dim": 128,
+    "output_dir": "runs/wl",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 1.0,
+    "temperature": 0.1,
+    "theta": 0.3,
+    "weight_decay": 0.0001
+  },
+  "metrics": {
+    "best_accuracy": 0.8895424604415894,
+    "best_ckpt_path": null,
+    "dataset": "amazon-photo",
+    "epochs": 150
+  },
+  "seed": 7,
+  "trainer": "wl",
+  "trial_id": "b166c09d68d4",
+  "wall_time_sec": 320.22
+}
