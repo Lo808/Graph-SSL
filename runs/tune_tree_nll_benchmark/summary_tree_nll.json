@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "wl_gin_best_accuracy": 0.75,
+    "tree_nll_best_accuracy": 0.5900000333786011
+  },
+  {
+    "dataset": "citeseer",
+    "display": "CiteSeer",
+    "wl_gin_best_accuracy": 0.5659999847412109,
+    "tree_nll_best_accuracy": 0.39400002360343933
+  },
+  {
+    "dataset": "amazon-photo",
+    "display": "Amazon-Photo",
+    "wl_gin_best_accuracy": 0.8895424604415894,
+    "tree_nll_best_accuracy": 0.7248366475105286
+  },
+  {
+    "dataset": "actor",
+    "display": "Actor",
+    "wl_gin_best_accuracy": 0.26710525155067444,
+    "tree_nll_best_accuracy": 0.2671052813529968
+  },
+  {
+    "dataset": "squirrel",
+    "display": "Squirrel",
+    "wl_gin_best_accuracy": null,
+    "tree_nll_best_accuracy": 0.3352545499801636
+  },
+  {
+    "dataset": "chameleon",
+    "display": "Chameleon",
+    "wl_gin_best_accuracy": 0.5438596606254578,
+    "tree_nll_best_accuracy": 0.5131579041481018
+  }
+]

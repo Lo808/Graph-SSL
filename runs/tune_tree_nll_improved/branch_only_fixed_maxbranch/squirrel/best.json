@@ -1,0 +1,45 @@
+{
+  "cfg": {
+    "branch_min_children": 2,
+    "branch_only_tree_nll": true,
+    "contrastive_mode": "fixed",
+    "dataset": "squirrel",
+    "device": "cuda",
+    "dropout": 0.0,
+    "epochs": 150,
+    "heads": 2,
+    "hidden_dim": 128,
+    "lambda_hier": 0.001,
+    "lambda_nce": 1.0,
+    "log_interval": 10,
+    "lr": 0.0003,
+    "model": "gin",
+    "nce_level_policy": "max_branching",
+    "num_layers": 2,
+    "num_negatives": 512,
+    "out_dim": 256,
+    "output_dir": "runs/tune_tree_nll_improved/checkpoints/branch_only_fixed_maxbranch",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.2,
+    "warmup": 40,
+    "weight_decay": 1e-05,
+    "wl_max_iter": 5
+  },
+  "metrics": {
+    "best_accuracy": 0.369836688041687,
+    "best_ckpt_path": null,
+    "best_epoch": 80,
+    "branch_score": {
+      "1": 1.0,
+      "2": 0.9571236300711402,
+      "3": 0.015766198807921555
+    },
+    "dataset": "squirrel",
+    "epochs": 150
+  },
+  "seed": 8,
+  "trial_id": "c805ca5c600d",
+  "wall_time_sec": 295.09
+}

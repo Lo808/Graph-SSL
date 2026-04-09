@@ -8,6 +8,7 @@ from typing import Callable, Dict, Mapping, Any
 from wl_gcl.src.trainers import train_wl
 from wl_gcl.src.trainers import train_baseline
 from wl_gcl.src.trainers import train_wl_hierarchy
+from wl_gcl.src.trainers import train_wl_dino
 
 TrainerFn = Callable[[Any], Dict[str, float]]
 
@@ -15,6 +16,7 @@ _TRAINERS: Mapping[str, TrainerFn] = {
     "wl": train_wl,
     "baseline": train_baseline,
     "wl_hierarchy": train_wl_hierarchy,
+    "wl_dino": train_wl_dino,
 }
 
 def get_trainer(name: str) -> TrainerFn:
@@ -27,4 +29,3 @@ def get_trainer(name: str) -> TrainerFn:
 
 def available_trainers() -> list[str]:
     return sorted(_TRAINERS.keys())
-

@@ -1,0 +1,45 @@
+{
+  "cfg": {
+    "branch_min_children": 2,
+    "branch_only_tree_nll": true,
+    "contrastive_mode": "fixed",
+    "dataset": "amazon-photo",
+    "device": "cuda",
+    "dropout": 0.2,
+    "epochs": 150,
+    "heads": 4,
+    "hidden_dim": 512,
+    "lambda_hier": 0.001,
+    "lambda_nce": 0.1,
+    "log_interval": 10,
+    "lr": 0.0003,
+    "model": "gin",
+    "nce_level_policy": "max_branching",
+    "num_layers": 2,
+    "num_negatives": 512,
+    "out_dim": 256,
+    "output_dir": "runs/tune_tree_nll_improved/checkpoints/branch_only_fixed_maxbranch",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.5,
+    "warmup": 80,
+    "weight_decay": 1e-06,
+    "wl_max_iter": 10
+  },
+  "metrics": {
+    "best_accuracy": 0.6980392336845398,
+    "best_ckpt_path": null,
+    "best_epoch": 150,
+    "branch_score": {
+      "1": 1.0,
+      "2": 0.9741176470588235,
+      "3": 0.01673202614379085
+    },
+    "dataset": "amazon-photo",
+    "epochs": 150
+  },
+  "seed": 10,
+  "trial_id": "c01c7e46999e",
+  "wall_time_sec": 462.549
+}

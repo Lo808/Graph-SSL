@@ -1,0 +1,44 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "wl_gin_best_accuracy": 0.75,
+    "wl_hierarchy_ce_best_accuracy": 0.5789999961853027,
+    "tree_nll_improved_best_accuracy": 0.4440000355243683
+  },
+  {
+    "dataset": "citeseer",
+    "display": "CiteSeer",
+    "wl_gin_best_accuracy": 0.5659999847412109,
+    "wl_hierarchy_ce_best_accuracy": 0.4090000092983246,
+    "tree_nll_improved_best_accuracy": 0.3320000171661377
+  },
+  {
+    "dataset": "amazon-photo",
+    "display": "Amazon-Photo",
+    "wl_gin_best_accuracy": 0.8895424604415894,
+    "wl_hierarchy_ce_best_accuracy": 0.8960784077644348,
+    "tree_nll_improved_best_accuracy": 0.6980392336845398
+  },
+  {
+    "dataset": "actor",
+    "display": "Actor",
+    "wl_gin_best_accuracy": 0.26710525155067444,
+    "wl_hierarchy_ce_best_accuracy": 0.27763158082962036,
+    "tree_nll_improved_best_accuracy": 0.27565789222717285
+  },
+  {
+    "dataset": "squirrel",
+    "display": "Squirrel",
+    "wl_gin_best_accuracy": null,
+    "wl_hierarchy_ce_best_accuracy": 0.40441882610321045,
+    "tree_nll_improved_best_accuracy": 0.369836688041687
+  },
+  {
+    "dataset": "chameleon",
+    "display": "Chameleon",
+    "wl_gin_best_accuracy": 0.5438596606254578,
+    "wl_hierarchy_ce_best_accuracy": 0.5833333134651184,
+    "tree_nll_improved_best_accuracy": 0.5789473652839661
+  }
+]

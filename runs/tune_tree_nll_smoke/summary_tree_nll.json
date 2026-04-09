@@ -1,0 +1,8 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "wl_gin_best_accuracy": 0.75,
+    "tree_nll_best_accuracy": 0.22499999403953552
+  }
+]

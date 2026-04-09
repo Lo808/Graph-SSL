@@ -1,0 +1,54 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gin",
+    "wl_baseline_mean": 0.6710000038146973,
+    "wl_baseline_std": 0.0,
+    "dino_only_mean": 0.2290000021457672,
+    "dino_only_std": 0.0,
+    "wl_only_mean": 0.23399999737739563,
+    "wl_only_std": 0.0,
+    "dino_wl_mean": 0.24899999797344208,
+    "dino_wl_std": 0.0
+  },
+  {
+    "dataset": "citeseer",
+    "display": "CiteSeer",
+    "model": "gin",
+    "wl_baseline_mean": 0.30300000309944153,
+    "wl_baseline_std": 0.0,
+    "dino_only_mean": 0.2290000021457672,
+    "dino_only_std": 0.0,
+    "wl_only_mean": 0.24300000071525574,
+    "wl_only_std": 0.0,
+    "dino_wl_mean": 0.23600000143051147,
+    "dino_wl_std": 0.0
+  },
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "wlhn",
+    "wl_baseline_mean": 0.41200000047683716,
+    "wl_baseline_std": 0.0,
+    "dino_only_mean": 0.3720000088214874,
+    "dino_only_std": 0.0,
+    "wl_only_mean": 0.36800000071525574,
+    "wl_only_std": 0.0,
+    "dino_wl_mean": 0.367000013589859,
+    "dino_wl_std": 0.0
+  },
+  {
+    "dataset": "citeseer",
+    "display": "CiteSeer",
+    "model": "wlhn",
+    "wl_baseline_mean": 0.36399999260902405,
+    "wl_baseline_std": 0.0,
+    "dino_only_mean": 0.36000001430511475,
+    "dino_only_std": 0.0,
+    "wl_only_mean": 0.36800000071525574,
+    "wl_only_std": 0.0,
+    "dino_wl_mean": 0.3700000047683716,
+    "dino_wl_std": 0.0
+  }
+]

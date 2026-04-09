@@ -1,0 +1,8 @@
+[
+  {
+    "dataset": "citeseer",
+    "display": "CiteSeer",
+    "wl_gin_best_accuracy": 0.5659999847412109,
+    "tree_nll_best_accuracy": 0.16699999570846558
+  }
+]

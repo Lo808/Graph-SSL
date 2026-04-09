@@ -1,0 +1,9 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gin",
+    "dino_wl_mean": 0.24900001287460327,
+    "dino_wl_std": 0.0
+  }
+]

@@ -1,0 +1,1 @@
+{"dataset": "cora", "model": "gin", "method": "dino_only", "seed": 7, "best_accuracy": 0.2409999966621399}

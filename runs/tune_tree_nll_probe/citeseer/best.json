@@ -1,0 +1,36 @@
+{
+  "cfg": {
+    "dataset": "citeseer",
+    "device": "cpu",
+    "dropout": 0.2,
+    "epochs": 2,
+    "heads": 4,
+    "hidden_dim": 128,
+    "lambda_hier": 0.1,
+    "lambda_nce": 0.1,
+    "log_interval": 2,
+    "lr": 0.0003,
+    "model": "gin",
+    "num_layers": 2,
+    "num_negatives": 128,
+    "out_dim": 128,
+    "output_dir": "runs/tune_tree_nll_probe/checkpoints",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 1.0,
+    "temperature": 0.1,
+    "warmup": 80,
+    "weight_decay": 0.0001,
+    "wl_max_iter": 5
+  },
+  "metrics": {
+    "best_accuracy": 0.16699999570846558,
+    "best_ckpt_path": null,
+    "best_epoch": 2,
+    "dataset": "citeseer",
+    "epochs": 2
+  },
+  "seed": 8,
+  "trial_id": "913fc7531c90",
+  "wall_time_sec": 15.287
+}

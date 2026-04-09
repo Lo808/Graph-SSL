@@ -1,0 +1,16 @@
+{"dataset": "cora", "model": "gin", "method": "wl_baseline", "seed": 7, "best_accuracy": 0.6710000038146973}
+{"dataset": "cora", "model": "gin", "method": "dino_only", "seed": 7, "best_accuracy": 0.2290000021457672}
+{"dataset": "cora", "model": "gin", "method": "wl_only", "seed": 7, "best_accuracy": 0.23399999737739563}
+{"dataset": "cora", "model": "gin", "method": "dino_wl", "seed": 7, "best_accuracy": 0.24899999797344208}
+{"dataset": "citeseer", "model": "gin", "method": "wl_baseline", "seed": 7, "best_accuracy": 0.30300000309944153}
+{"dataset": "citeseer", "model": "gin", "method": "dino_only", "seed": 7, "best_accuracy": 0.2290000021457672}
+{"dataset": "citeseer", "model": "gin", "method": "wl_only", "seed": 7, "best_accuracy": 0.24300000071525574}
+{"dataset": "citeseer", "model": "gin", "method": "dino_wl", "seed": 7, "best_accuracy": 0.23600000143051147}
+{"dataset": "cora", "model": "wlhn", "method": "wl_baseline", "seed": 7, "best_accuracy": 0.41200000047683716}
+{"dataset": "cora", "model": "wlhn", "method": "dino_only", "seed": 7, "best_accuracy": 0.3720000088214874}
+{"dataset": "cora", "model": "wlhn", "method": "wl_only", "seed": 7, "best_accuracy": 0.36800000071525574}
+{"dataset": "cora", "model": "wlhn", "method": "dino_wl", "seed": 7, "best_accuracy": 0.367000013589859}
+{"dataset": "citeseer", "model": "wlhn", "method": "wl_baseline", "seed": 7, "best_accuracy": 0.36399999260902405}
+{"dataset": "citeseer", "model": "wlhn", "method": "dino_only", "seed": 7, "best_accuracy": 0.36000001430511475}
+{"dataset": "citeseer", "model": "wlhn", "method": "wl_only", "seed": 7, "best_accuracy": 0.36800000071525574}
+{"dataset": "citeseer", "model": "wlhn", "method": "dino_wl", "seed": 7, "best_accuracy": 0.3700000047683716}

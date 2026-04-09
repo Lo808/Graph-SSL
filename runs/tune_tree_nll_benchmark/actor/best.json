@@ -1,0 +1,36 @@
+{
+  "cfg": {
+    "dataset": "actor",
+    "device": "cuda",
+    "dropout": 0.0,
+    "epochs": 40,
+    "heads": 2,
+    "hidden_dim": 128,
+    "lambda_hier": 0.001,
+    "lambda_nce": 1.0,
+    "log_interval": 20,
+    "lr": 0.0003,
+    "model": "gin",
+    "num_layers": 2,
+    "num_negatives": 512,
+    "out_dim": 256,
+    "output_dir": "runs/tune_tree_nll_benchmark/checkpoints",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.2,
+    "warmup": 40,
+    "weight_decay": 1e-05,
+    "wl_max_iter": 5
+  },
+  "metrics": {
+    "best_accuracy": 0.2671052813529968,
+    "best_ckpt_path": null,
+    "best_epoch": 40,
+    "dataset": "actor",
+    "epochs": 40
+  },
+  "seed": 8,
+  "trial_id": "5b6ff5b4e8ae",
+  "wall_time_sec": 882.05
+}

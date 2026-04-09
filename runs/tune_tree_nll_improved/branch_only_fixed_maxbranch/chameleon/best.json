@@ -1,0 +1,46 @@
+{
+  "cfg": {
+    "branch_min_children": 2,
+    "branch_only_tree_nll": true,
+    "contrastive_mode": "fixed",
+    "dataset": "chameleon",
+    "device": "cuda",
+    "dropout": 0.0,
+    "epochs": 150,
+    "heads": 2,
+    "hidden_dim": 128,
+    "lambda_hier": 0.001,
+    "lambda_nce": 1.0,
+    "log_interval": 10,
+    "lr": 0.0003,
+    "model": "gin",
+    "nce_level_policy": "max_branching",
+    "num_layers": 2,
+    "num_negatives": 512,
+    "out_dim": 256,
+    "output_dir": "runs/tune_tree_nll_improved/checkpoints/branch_only_fixed_maxbranch",
+    "save_best": false,
+    "scheduler": true,
+    "tau": 2.0,
+    "temperature": 0.2,
+    "warmup": 40,
+    "weight_decay": 1e-05,
+    "wl_max_iter": 5
+  },
+  "metrics": {
+    "best_accuracy": 0.5789473652839661,
+    "best_ckpt_path": null,
+    "best_epoch": 60,
+    "branch_score": {
+      "1": 1.0,
+      "2": 0.9732103645147123,
+      "3": 0.03469477382520861,
+      "4": 0.000878348704435661
+    },
+    "dataset": "chameleon",
+    "epochs": 150
+  },
+  "seed": 8,
+  "trial_id": "27117cdf4e54",
+  "wall_time_sec": 146.706
+}
