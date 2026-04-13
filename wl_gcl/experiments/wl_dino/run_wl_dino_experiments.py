@@ -40,6 +40,8 @@ METHODS = {
     "dino_only": "DINO-only",
     "wl_only": "WL-only",
     "dino_wl": "DINO+WL",
+    "byol": "BYOL",
+    "bgrl": "BGRL",
 }
 
 
@@ -113,6 +115,10 @@ def run_single(
         objective = "wl"
     elif method == "dino_wl":
         objective = "full"
+    elif method == "byol":
+        objective = "byol"
+    elif method == "bgrl":
+        objective = "bgrl"
     else:
         raise ValueError(f"Unknown method: {method}")
 
@@ -136,7 +142,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run WL-guided DINO experiments (5-seed summary).")
     parser.add_argument("--datasets", type=str, default="all")
     parser.add_argument("--models", type=str, default="gin,wlhn")
-    parser.add_argument("--methods", type=str, default="wl_baseline,dino_only,wl_only,dino_wl")
+    parser.add_argument("--methods", type=str, default="wl_baseline,dino_only,wl_only,dino_wl,byol,bgrl")
     parser.add_argument("--seeds", type=str, default="7,11,19,23,31")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--epochs", type=int, default=None)
@@ -231,20 +237,19 @@ def main() -> None:
     print("=" * 90)
     for model in models:
         print(f"\nBackbone: {model.upper()}")
-        print("Dataset | WL-GIN | DINO-only | WL-only | DINO+WL")
-        print("---|---:|---:|---:|---:")
+        method_headers = [METHODS.get(m, m) for m in methods]
+        print("Dataset | " + " | ".join(method_headers))
+        print("---|" + "|".join(["---:"] * len(method_headers)))
 
         rows_for_model = [r for r in aggregated_rows if r["model"] == model]
         rows_for_model.sort(key=lambda r: DATASET_ORDER.index(str(r["dataset"])))
 
         for row in rows_for_model:
-            wl_base = fmt_pct_pm(
-                row.get("wl_baseline_mean"), row.get("wl_baseline_std")
-            )
-            dino = fmt_pct_pm(row.get("dino_only_mean"), row.get("dino_only_std"))
-            wl_only = fmt_pct_pm(row.get("wl_only_mean"), row.get("wl_only_std"))
-            full = fmt_pct_pm(row.get("dino_wl_mean"), row.get("dino_wl_std"))
-            print(f"{row['display']} | {wl_base} | {dino} | {wl_only} | {full}")
+            values = [
+                fmt_pct_pm(row.get(f"{m}_mean"), row.get(f"{m}_std"))
+                for m in methods
+            ]
+            print(f"{row['display']} | " + " | ".join(values))
 
     print(f"\nSaved raw run records: {raw_fp}")
     print(f"Saved summary table data: {summary_fp}")
@@ -252,4 +257,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

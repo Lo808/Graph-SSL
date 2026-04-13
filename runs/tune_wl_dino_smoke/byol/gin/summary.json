@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gin",
+    "method": "byol",
+    "best_accuracy": 0.3230000138282776,
+    "best_trial_id": "3faf5abd68bd"
+  }
+]
