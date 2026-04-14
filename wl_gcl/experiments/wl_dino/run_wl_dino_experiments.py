@@ -42,6 +42,9 @@ METHODS = {
     "dino_wl": "DINO+WL",
     "byol": "BYOL",
     "bgrl": "BGRL",
+    "bgrl_wl_naive": "BGRL+WL-Naive",
+    "bgrl_wl_cls": "BGRL+WL-Cls",
+    "bgrl_wl_naive_cls": "BGRL+WL-Naive+Cls",
 }
 
 
@@ -92,6 +95,8 @@ def run_single(
     epochs: int | None,
     log_interval: int,
     use_augmentations: bool,
+    wl_depth: int | None,
+    use_max_wl_depth: bool,
 ) -> float:
     if method == "wl_baseline":
         cfg = make_wl_cfg(dataset)
@@ -119,6 +124,12 @@ def run_single(
         objective = "byol"
     elif method == "bgrl":
         objective = "bgrl"
+    elif method == "bgrl_wl_naive":
+        objective = "bgrl_wl_naive"
+    elif method == "bgrl_wl_cls":
+        objective = "bgrl_wl_cls"
+    elif method == "bgrl_wl_naive_cls":
+        objective = "bgrl_wl_naive_cls"
     else:
         raise ValueError(f"Unknown method: {method}")
 
@@ -129,10 +140,13 @@ def run_single(
         device=device,
         log_interval=log_interval,
         use_augmentations=use_augmentations,
+        use_max_wl_depth=use_max_wl_depth,
         save_best=False,
     )
     if epochs is not None:
         cfg = replace(cfg, epochs=epochs)
+    if wl_depth is not None:
+        cfg = replace(cfg, wl_depth=wl_depth)
 
     metrics = train_wl_dino(cfg)
     return float(metrics["best_accuracy"])
@@ -142,10 +156,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run WL-guided DINO experiments (5-seed summary).")
     parser.add_argument("--datasets", type=str, default="all")
     parser.add_argument("--models", type=str, default="gin,wlhn")
-    parser.add_argument("--methods", type=str, default="wl_baseline,dino_only,wl_only,dino_wl,byol,bgrl")
+    parser.add_argument(
+        "--methods",
+        type=str,
+        default="wl_baseline,dino_only,wl_only,dino_wl,byol,bgrl,bgrl_wl_naive,bgrl_wl_cls,bgrl_wl_naive_cls",
+    )
     parser.add_argument("--seeds", type=str, default="7,11,19,23,31")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--epochs", type=int, default=None)
+    parser.add_argument("--wl_depth", type=int, default=None)
+    parser.add_argument("--use_max_wl_depth", action="store_true")
     parser.add_argument("--log_interval", type=int, default=10)
     parser.add_argument("--use_augmentations", action="store_true")
     parser.add_argument("--out_dir", type=str, default="runs/wl_dino_experiments")
@@ -200,6 +220,8 @@ def main() -> None:
                         epochs=args.epochs,
                         log_interval=args.log_interval,
                         use_augmentations=args.use_augmentations,
+                        wl_depth=args.wl_depth,
+                        use_max_wl_depth=args.use_max_wl_depth,
                     )
                     by_method[method].append(acc)
 

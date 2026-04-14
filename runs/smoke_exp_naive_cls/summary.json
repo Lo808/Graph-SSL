@@ -1,0 +1,16 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gcn",
+    "bgrl_wl_naive_cls_mean": 0.718999981880188,
+    "bgrl_wl_naive_cls_std": 0.0
+  },
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gat",
+    "bgrl_wl_naive_cls_mean": 0.7580000162124634,
+    "bgrl_wl_naive_cls_std": 0.0
+  }
+]

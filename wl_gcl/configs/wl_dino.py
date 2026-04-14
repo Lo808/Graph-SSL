@@ -94,6 +94,17 @@ class WLDinoConfig:
     wl_repulsion_beta: float = 0.1
     wl_repulsion_threshold: float = 2.0
     wl_depth: int = 4
+    use_max_wl_depth: bool = False
+    wl_naive_step_size: int = 20
+    wl_naive_debug: bool = False
+    wl_naive_pair_sampling: str = "uniform"  # {"uniform", "feature_softmax", "hybrid", "wl_distance"}
+    wl_naive_pair_temp_start: float = 0.7
+    wl_naive_pair_temp_end: float = 0.1
+    wl_naive_mix_start_frac: float = 0.5
+    wl_naive_mix_end_alpha: float = 0.0
+    wl_naive_distance_beta: float = 1.0
+    wl_cls_levels: str = "all"  # comma-separated levels in [1..T] or "all"
+    wl_cls_alpha_scheme: str = "uniform"  # {"uniform", "deeper_more", "shallower_more"}
     k_wl: int = 32
     k_feat: int = 32
     num_random_neg: int = 0
@@ -104,6 +115,9 @@ class WLDinoConfig:
     # - "dino": distill only
     # - "byol": BYOL regression only
     # - "bgrl": BGRL regression only
+    # - "bgrl_wl_naive": BGRL bootstrap with WL-cluster positive partner selection
+    # - "bgrl_wl_cls": BGRL + multi-level WL pseudo-label classification
+    # - "bgrl_wl_naive_cls": WL-pair BGRL + multi-level WL pseudo-label classification
     # - "wl": WL loss only (selected by wl_loss_type)
     # - "full": distill + lambda_wl * WL loss
     objective: str = "full"

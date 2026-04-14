@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "cora",
+    "display": "Cora",
+    "model": "gcn",
+    "method": "bgrl_wl_naive",
+    "best_accuracy": 0.6890000104904175,
+    "best_trial_id": "12d2bd9686a3"
+  }
+]

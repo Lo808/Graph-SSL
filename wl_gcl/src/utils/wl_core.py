@@ -22,6 +22,7 @@ class WLBuildConfig:
     max_iterations: int = 5
     force_convergence: bool = False
     early_stop: bool = True
+    debug: bool = False
 
 
 class WLHierarchyEngine:
@@ -54,11 +55,13 @@ class WLHierarchyEngine:
         max_iterations: int = 5,
         force_convergence: bool = False,
         early_stop: bool = True,
+        debug: bool = False,
     ) -> "WLHierarchyEngine":
         cfg = WLBuildConfig(
             max_iterations=max_iterations,
             force_convergence=force_convergence,
             early_stop=early_stop,
+            debug=debug,
         )
         return self._fit(cfg)
     
@@ -321,6 +324,8 @@ class WLHierarchyEngine:
 
         current_labels: Dict[Node, str] = {n: "0" for n in self.nodes}
         parent_cluster: Dict[Node, str] = {n: root_id for n in self.nodes}
+        if cfg.debug:
+            print(f"Iter 0: {len(set(current_labels.values()))} unique colors")
 
         if nx is not None:
             self._viz_graph = nx.DiGraph()
@@ -340,6 +345,8 @@ class WLHierarchyEngine:
 
             new_raw_labels = self._canonical_relabel(signatures)
             new_label: Dict[Node, str] = dict(zip(self.nodes, new_raw_labels))
+            if cfg.debug:
+                print(f"Iter {it}: {len(set(new_label.values()))} unique colors")
 
             # Group by (parent_cluster, new_label)
             groups: Dict[Tuple[str, str], List[Node]] = defaultdict(list)

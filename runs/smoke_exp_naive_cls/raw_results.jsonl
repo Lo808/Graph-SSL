@@ -1,0 +1,2 @@
+{"dataset": "cora", "model": "gcn", "method": "bgrl_wl_naive_cls", "seed": 7, "best_accuracy": 0.718999981880188}
+{"dataset": "cora", "model": "gat", "method": "bgrl_wl_naive_cls", "seed": 7, "best_accuracy": 0.7580000162124634}

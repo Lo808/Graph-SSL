@@ -41,6 +41,9 @@ METHOD_TO_OBJECTIVE = {
     "dino_only": "dino",
     "byol": "byol",
     "bgrl": "bgrl",
+    "bgrl_wl_naive": "bgrl_wl_naive",
+    "bgrl_wl_cls": "bgrl_wl_cls",
+    "bgrl_wl_naive_cls": "bgrl_wl_naive_cls",
     "wl_only": "wl",
 }
 
@@ -120,6 +123,43 @@ def search_space(method: str, model: str, include_miner: bool) -> Dict[str, List
             }
         )
 
+    if method == "bgrl_wl_naive":
+        space.update(
+            {
+                "wl_naive_pair_sampling": ["wl_distance", "hybrid", "feature_softmax", "uniform"],
+                "wl_naive_pair_temp_start": [1.0, 0.7, 0.5],
+                "wl_naive_pair_temp_end": [0.3, 0.2, 0.1],
+                "wl_naive_mix_start_frac": [0.3, 0.5, 0.7],
+                "wl_naive_mix_end_alpha": [0.0, 0.1, 0.2],
+                "wl_naive_distance_beta": [0.25, 0.5, 1.0, 2.0, 4.0],
+            }
+        )
+
+    if method == "bgrl_wl_cls":
+        space.update(
+            {
+                "lambda_wl": [0.1, 0.2, 0.5, 1.0, 2.0],
+                "wl_cls_levels": ["all", "1,2", "2,3,4", "3,4"],
+                "wl_cls_alpha_scheme": ["uniform", "deeper_more", "shallower_more"],
+            }
+        )
+
+    if method == "bgrl_wl_naive_cls":
+        space.update(
+            {
+                "use_augmentations": [False],
+                "lambda_wl": [0.1, 0.2, 0.5, 1.0, 2.0],
+                "wl_naive_pair_sampling": ["wl_distance", "hybrid", "feature_softmax", "uniform"],
+                "wl_naive_pair_temp_start": [1.0, 0.7, 0.5],
+                "wl_naive_pair_temp_end": [0.3, 0.2, 0.1],
+                "wl_naive_mix_start_frac": [0.3, 0.5, 0.7],
+                "wl_naive_mix_end_alpha": [0.0, 0.1, 0.2],
+                "wl_naive_distance_beta": [0.25, 0.5, 1.0, 2.0, 4.0],
+                "wl_cls_levels": ["all", "1,2", "2,3,4", "3,4"],
+                "wl_cls_alpha_scheme": ["uniform", "deeper_more", "shallower_more"],
+            }
+        )
+
     if method == "dino_wl":
         space.update(
             {
@@ -136,6 +176,9 @@ def search_space(method: str, model: str, include_miner: bool) -> Dict[str, List
                 "tau_wl": [1.0, 2.0, 4.0],
             }
         )
+    elif method in {"bgrl_wl_cls", "bgrl_wl_naive_cls"}:
+        # lambda_wl is explicitly tuned above for this objective.
+        pass
     else:
         # BYOL/BGRL/DINO-only do not use WL loss in objective.
         space["lambda_wl"] = [0.0]
@@ -269,7 +312,16 @@ def main() -> None:
         "--method",
         type=str,
         default="dino_wl",
-        choices=["dino_wl", "dino_only", "byol", "bgrl", "wl_only"],
+        choices=[
+            "dino_wl",
+            "dino_only",
+            "byol",
+            "bgrl",
+            "bgrl_wl_naive",
+            "bgrl_wl_cls",
+            "bgrl_wl_naive_cls",
+            "wl_only",
+        ],
     )
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--search", type=str, default="random", choices=["random", "grid"])
@@ -277,6 +329,26 @@ def main() -> None:
     parser.add_argument("--max_trials", type=int, default=None)
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--epochs", type=int, default=None)
+    parser.add_argument("--wl_depth", type=int, default=None)
+    parser.add_argument("--use_max_wl_depth", action="store_true")
+    parser.add_argument(
+        "--wl_naive_pair_sampling",
+        type=str,
+        default=None,
+        choices=["uniform", "feature_softmax", "hybrid", "wl_distance"],
+    )
+    parser.add_argument("--wl_naive_pair_temp_start", type=float, default=None)
+    parser.add_argument("--wl_naive_pair_temp_end", type=float, default=None)
+    parser.add_argument("--wl_naive_mix_start_frac", type=float, default=None)
+    parser.add_argument("--wl_naive_mix_end_alpha", type=float, default=None)
+    parser.add_argument("--wl_naive_distance_beta", type=float, default=None)
+    parser.add_argument("--wl_cls_levels", type=str, default=None)
+    parser.add_argument(
+        "--wl_cls_alpha_scheme",
+        type=str,
+        default=None,
+        choices=["uniform", "deeper_more", "shallower_more"],
+    )
     parser.add_argument("--log_interval", type=int, default=10)
     parser.add_argument("--out_dir", type=str, default="runs/tune_wl_dino")
     parser.add_argument("--include_miner", action="store_true")
@@ -320,14 +392,33 @@ def main() -> None:
                     "device": args.device,
                     "log_interval": args.log_interval,
                     "save_best": args.save_best_encoder,
+                    "use_max_wl_depth": args.use_max_wl_depth,
                     "output_dir": str(Path(args.out_dir) / "checkpoints" / args.method / args.model),
                 },
             )
             if args.epochs is not None:
                 cfg = apply_params(cfg, {"epochs": args.epochs})
+            if args.wl_depth is not None:
+                cfg = apply_params(cfg, {"wl_depth": args.wl_depth})
+            if args.wl_naive_pair_sampling is not None:
+                cfg = apply_params(cfg, {"wl_naive_pair_sampling": args.wl_naive_pair_sampling})
+            if args.wl_naive_pair_temp_start is not None:
+                cfg = apply_params(cfg, {"wl_naive_pair_temp_start": args.wl_naive_pair_temp_start})
+            if args.wl_naive_pair_temp_end is not None:
+                cfg = apply_params(cfg, {"wl_naive_pair_temp_end": args.wl_naive_pair_temp_end})
+            if args.wl_naive_mix_start_frac is not None:
+                cfg = apply_params(cfg, {"wl_naive_mix_start_frac": args.wl_naive_mix_start_frac})
+            if args.wl_naive_mix_end_alpha is not None:
+                cfg = apply_params(cfg, {"wl_naive_mix_end_alpha": args.wl_naive_mix_end_alpha})
+            if args.wl_naive_distance_beta is not None:
+                cfg = apply_params(cfg, {"wl_naive_distance_beta": args.wl_naive_distance_beta})
+            if args.wl_cls_levels is not None:
+                cfg = apply_params(cfg, {"wl_cls_levels": args.wl_cls_levels})
+            if args.wl_cls_alpha_scheme is not None:
+                cfg = apply_params(cfg, {"wl_cls_alpha_scheme": args.wl_cls_alpha_scheme})
 
             # Safety: BYOL/BGRL and DINO-only do not use WL objective.
-            if args.method in {"dino_only", "byol", "bgrl"}:
+            if args.method in {"dino_only", "byol", "bgrl", "bgrl_wl_naive"}:
                 cfg = apply_params(cfg, {"lambda_wl": 0.0})
 
             # Strong default for DINO+WL tuning.
@@ -428,4 +519,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

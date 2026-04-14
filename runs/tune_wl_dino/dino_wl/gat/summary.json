@@ -1,0 +1,10 @@
+[
+  {
+    "dataset": "amazon-photo",
+    "display": "Amazon-Photo",
+    "model": "gat",
+    "method": "dino_wl",
+    "best_accuracy": 0.3379085063934326,
+    "best_trial_id": "bfe1a90daeb9"
+  }
+]
