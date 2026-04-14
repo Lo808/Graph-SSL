@@ -6,6 +6,36 @@ The project reproduces and extends the WL-GCL pipeline, and compares it against 
 
 ---
 
+## Recommended Method (Current Main Objective)
+
+The current flagship method is:
+
+- `objective=bgrl_wl_naive_cls`
+
+It is a fully WL-based method that combines:
+
+1. BGRL bootstrap loss with WL-based positive-pair sampling (`bgrl_wl_naive` branch).
+2. Multi-level WL pseudo-label classification loss (`bgrl_wl_cls` branch).
+
+Formally:
+
+\[
+\mathcal{L}
+=
+\mathcal{L}_{\text{BGRL-WL-pairs}}
+ \lambda_{wl}\sum_{t \in \mathcal{T}} \alpha_t \,\mathcal{L}^{cls}_{wl,t}
+\]
+
+where \(\mathcal{L}^{cls}_{wl,t}\) is cross-entropy on WL colors at level \(t\).
+
+Important defaults:
+
+- Augmentations are **off by default** in `train_wl_dino.py`.
+- WL pair sampling mode is controlled by `--wl_naive_pair_sampling`.
+- WL classification weighting is controlled by `--wl_cls_alpha_scheme`.
+
+---
+
 ## Project Structure
 
 The codebase is organized as a modular Python package:
@@ -60,6 +90,107 @@ python main.py --method baseline --dataset cora
 
 ---
 
+## WL-DINO/BGRL Trainer Entry Point
+
+For the latest SSL objectives (DINO/BYOL/BGRL/WL variants), use:
+
+```bash
+python3 -u -m wl_gcl.src.trainers.train_wl_dino ...
+```
+
+### Run the Main Method (Augmentation-Free)
+
+```bash
+python3 -u -m wl_gcl.src.trainers.train_wl_dino \
+  --dataset cora \
+  --model gcn \
+  --objective bgrl_wl_naive_cls \
+  --epochs 500 \
+  --device cuda \
+  --use_max_wl_depth \
+  --wl_naive_pair_sampling wl_distance \
+  --wl_naive_distance_beta 1.0 \
+  --lambda_wl 0.5 \
+  --wl_cls_levels all \
+  --wl_cls_alpha_scheme deeper_more
+```
+
+Notes:
+
+- Do **not** pass `--use_augmentations` if you want augmentation-free training.
+- For uniform WL pair sampling, set `--wl_naive_pair_sampling uniform`.
+
+---
+
+## Hyperparameter Tuning (Ready for Coworker)
+
+Yes, hyperparameter tuning for `bgrl_wl_naive_cls` is already available in:
+
+```text
+wl_gcl/experiments/wl_dino/tune_wl_dino.py
+```
+
+Method key:
+
+- `--method bgrl_wl_naive_cls`
+
+You can force all results to be written in a dedicated folder via `--out_dir`.
+
+### Single model example
+
+```bash
+python3 -u -m wl_gcl.experiments.wl_dino.tune_wl_dino \
+  --datasets all \
+  --model gcn \
+  --method bgrl_wl_naive_cls \
+  --device cuda \
+  --use_max_wl_depth \
+  --search random \
+  --n_trials 60 \
+  --epochs 500 \
+  --out_dir runs/tune_bgrl_wl_naive_cls_2026_04_14
+```
+
+### All encoders in one root output folder
+
+```bash
+for m in gin gcn gat wlhn; do
+  python3 -u -m wl_gcl.experiments.wl_dino.tune_wl_dino \
+    --datasets all \
+    --model "$m" \
+    --method bgrl_wl_naive_cls \
+    --device cuda \
+    --use_max_wl_depth \
+    --search random \
+    --n_trials 60 \
+    --epochs 500 \
+    --out_dir runs/tune_bgrl_wl_naive_cls_2026_04_14
+done
+```
+
+### One-command script for coworker
+
+```bash
+bash scripts/tune_bgrl_wl_naive_cls_all.sh runs/tune_bgrl_wl_naive_cls_2026_04_14
+```
+
+Optional env overrides:
+
+```bash
+DATASETS=all MODELS="gin gcn gat wlhn" N_TRIALS=80 EPOCHS=500 DEVICE=cuda \
+bash scripts/tune_bgrl_wl_naive_cls_all.sh runs/tune_bgrl_wl_naive_cls_2026_04_14
+```
+
+Per-model and per-dataset results are stored under:
+
+```text
+<out_dir>/bgrl_wl_naive_cls/<model>/<dataset>/
+```
+
+with `results.jsonl`, `best.json`, and a per-model `summary.json`.
+
+---
+
 ## Arguments Reference
 
 | Argument | Default | Description |
@@ -98,5 +229,3 @@ You can modify these settings in:
 wl_gcl/configs/wl.py
 ```
 .
-
-
