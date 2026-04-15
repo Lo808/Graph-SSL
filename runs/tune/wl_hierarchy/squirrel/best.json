@@ -1,9 +1,9 @@
 {
   "cfg": {
     "dataset": "squirrel",
-    "device": "cpu",
+    "device": "cuda",
     "dropout": 0.0,
-    "epochs": 150,
+    "epochs": 400,
     "heads": 2,
     "hidden_dim": 128,
     "lambda_hier": 0.001,
@@ -24,13 +24,13 @@
     "wl_max_iter": 5
   },
   "metrics": {
-    "best_accuracy": 0.40441882610321045,
+    "best_accuracy": 0.41018250584602356,
     "best_ckpt_path": null,
     "dataset": "squirrel",
-    "epochs": 150
+    "epochs": 400
   },
   "seed": 7,
   "trainer": "wl_hierarchy",
-  "trial_id": "043ace2e3710",
-  "wall_time_sec": 420.381
+  "trial_id": "d5fadf01997e",
+  "wall_time_sec": 1225.115
 }

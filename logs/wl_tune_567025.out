@@ -230,3 +230,355 @@ Planned candidates: 40
 [WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 31.3134  Acc: 0.3141
 [WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 31.2595  Acc: 0.3151
 [WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 31.1990  Acc: 0.3122
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 31.0877  Acc: 0.3141
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 31.0473  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 31.0009  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 30.9094  Acc: 0.3074
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 30.8563  Acc: 0.3333
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 30.8598  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 30.7855  Acc: 0.3276
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 30.7848  Acc: 0.3391
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 30.7162  Acc: 0.3401
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 30.7072  Acc: 0.3401
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 30.6790  Acc: 0.3497
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 30.6403  Acc: 0.3573
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 30.6241  Acc: 0.3650
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 30.5914  Acc: 0.3593
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 30.5710  Acc: 0.3650
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 30.5733  Acc: 0.3593
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 30.5464  Acc: 0.3593
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 30.5305  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 30.5159  Acc: 0.3506
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 30.5076  Acc: 0.3535
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 30.4981  Acc: 0.3506
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 30.4853  Acc: 0.3516
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 30.4752  Acc: 0.3516
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 30.4671  Acc: 0.3516
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 30.4610  Acc: 0.3497
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 30.4563  Acc: 0.3497
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 30.4528  Acc: 0.3468
+[WL-HIERARCHY | squirrel    ] Epoch 360/400  Loss: 30.4505  Acc: 0.3372
+[WL-HIERARCHY | squirrel    ] Epoch 370/400  Loss: 30.4490  Acc: 0.3391
+[WL-HIERARCHY | squirrel    ] Epoch 380/400  Loss: 30.4482  Acc: 0.3410
+[WL-HIERARCHY | squirrel    ] Epoch 390/400  Loss: 30.4479  Acc: 0.3362
+[WL-HIERARCHY | squirrel    ] Epoch 400/400  Loss: 30.4479  Acc: 0.3372
+[WL-HIERARCHY | SQUIRREL    ] Best Acc: 0.3650
+[BEST GLOBAL] best_accuracy=0.4044 trial=043ace2e3710
+
+=== [5/40] Trial 762a4ccbf71e (wl_hierarchy/squirrel) ===
+{
+  "dropout": 0.2,
+  "epochs": 300,
+  "heads": 8,
+  "hidden_dim": 128,
+  "lambda_hier": 0.001,
+  "lambda_nce": 1.0,
+  "lr": 0.001,
+  "num_layers": 3,
+  "num_negatives": 512,
+  "out_dim": 64,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 1e-06,
+  "wl_max_iter": 10
+}
+
+[WL-HIERARCHY] Dataset=SQUIRREL | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | squirrel    ] Epoch 010/400  Loss: 33.0246  Acc: 0.3074
+[WL-HIERARCHY | squirrel    ] Epoch 020/400  Loss: 40.5891  Acc: 0.2997
+[WL-HIERARCHY | squirrel    ] Epoch 030/400  Loss: 40.2090  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 040/400  Loss: 40.1455  Acc: 0.3189
+[WL-HIERARCHY | squirrel    ] Epoch 050/400  Loss: 39.6592  Acc: 0.3237
+[WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 39.4760  Acc: 0.3295
+[WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 39.1024  Acc: 0.3170
+[WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 38.8189  Acc: 0.3410
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 38.5515  Acc: 0.3401
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 38.4242  Acc: 0.3391
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 38.1483  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 37.9884  Acc: 0.3458
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 37.8277  Acc: 0.3458
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 37.6604  Acc: 0.3449
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 37.5265  Acc: 0.3420
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 37.3603  Acc: 0.3429
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 37.2070  Acc: 0.3372
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 37.0797  Acc: 0.3477
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 36.9803  Acc: 0.3477
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 37.3205  Acc: 0.3141
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 37.0589  Acc: 0.3381
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 36.8405  Acc: 0.3497
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 36.7258  Acc: 0.3506
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 36.6318  Acc: 0.3516
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 36.5558  Acc: 0.3525
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 36.4937  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 36.4408  Acc: 0.3535
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 36.3948  Acc: 0.3525
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 36.3554  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 36.3225  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 36.2955  Acc: 0.3458
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 36.2736  Acc: 0.3429
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 36.2564  Acc: 0.3410
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 36.2433  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 36.2338  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 360/400  Loss: 36.2274  Acc: 0.3449
+[WL-HIERARCHY | squirrel    ] Epoch 370/400  Loss: 36.2233  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 380/400  Loss: 36.2212  Acc: 0.3487
+[WL-HIERARCHY | squirrel    ] Epoch 390/400  Loss: 36.2204  Acc: 0.3468
+[WL-HIERARCHY | squirrel    ] Epoch 400/400  Loss: 36.2202  Acc: 0.3449
+[WL-HIERARCHY | SQUIRREL    ] Best Acc: 0.3535
+[BEST GLOBAL] best_accuracy=0.4044 trial=043ace2e3710
+
+=== [6/40] Trial caacf8b97527 (wl_hierarchy/squirrel) ===
+{
+  "dropout": 0.0,
+  "epochs": 400,
+  "heads": 8,
+  "hidden_dim": 128,
+  "lambda_hier": 0.01,
+  "lambda_nce": 1.0,
+  "lr": 0.0003,
+  "num_layers": 3,
+  "num_negatives": 512,
+  "out_dim": 256,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=SQUIRREL | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | squirrel    ] Epoch 010/400  Loss: 33.1633  Acc: 0.3151
+[WL-HIERARCHY | squirrel    ] Epoch 020/400  Loss: 40.7153  Acc: 0.3045
+[WL-HIERARCHY | squirrel    ] Epoch 030/400  Loss: 40.2514  Acc: 0.3180
+[WL-HIERARCHY | squirrel    ] Epoch 040/400  Loss: 39.8520  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 050/400  Loss: 40.0180  Acc: 0.3410
+[WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 39.5265  Acc: 0.3324
+[WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 39.2127  Acc: 0.3535
+[WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 39.0305  Acc: 0.3554
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 38.8921  Acc: 0.3593
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 38.7086  Acc: 0.3698
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 38.5916  Acc: 0.3727
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 38.4495  Acc: 0.3718
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 38.3152  Acc: 0.3862
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 38.2391  Acc: 0.3679
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 38.1688  Acc: 0.3698
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 38.0243  Acc: 0.3756
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 37.9818  Acc: 0.3660
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 37.8514  Acc: 0.3746
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 37.7691  Acc: 0.3737
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 37.7366  Acc: 0.3727
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 37.6462  Acc: 0.3794
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 37.5863  Acc: 0.3775
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 37.5316  Acc: 0.3794
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 37.4900  Acc: 0.3756
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 37.4498  Acc: 0.3670
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 37.4132  Acc: 0.3679
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 37.3818  Acc: 0.3689
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 37.3561  Acc: 0.3622
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 37.3327  Acc: 0.3670
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 37.3133  Acc: 0.3689
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 37.2974  Acc: 0.3718
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 37.2847  Acc: 0.3718
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 37.2746  Acc: 0.3708
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 37.2670  Acc: 0.3689
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 37.2614  Acc: 0.3727
+[WL-HIERARCHY | squirrel    ] Epoch 360/400  Loss: 37.2576  Acc: 0.3679
+[WL-HIERARCHY | squirrel    ] Epoch 370/400  Loss: 37.2552  Acc: 0.3698
+[WL-HIERARCHY | squirrel    ] Epoch 380/400  Loss: 37.2540  Acc: 0.3679
+[WL-HIERARCHY | squirrel    ] Epoch 390/400  Loss: 37.2535  Acc: 0.3689
+[WL-HIERARCHY | squirrel    ] Epoch 400/400  Loss: 37.2534  Acc: 0.3689
+[WL-HIERARCHY | SQUIRREL    ] Best Acc: 0.3862
+[BEST GLOBAL] best_accuracy=0.4044 trial=043ace2e3710
+
+=== [7/40] Trial baa9640013a1 (wl_hierarchy/squirrel) ===
+{
+  "dropout": 0.0,
+  "epochs": 300,
+  "heads": 8,
+  "hidden_dim": 512,
+  "lambda_hier": 0.001,
+  "lambda_nce": 1.0,
+  "lr": 0.001,
+  "num_layers": 4,
+  "num_negatives": 512,
+  "out_dim": 64,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.5,
+  "warmup": 80,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 10
+}
+
+[WL-HIERARCHY] Dataset=SQUIRREL | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | squirrel    ] Epoch 010/400  Loss: 10.4421  Acc: 0.2901
+[WL-HIERARCHY | squirrel    ] Epoch 020/400  Loss: 10.1864  Acc: 0.3064
+[WL-HIERARCHY | squirrel    ] Epoch 030/400  Loss: 31.8078  Acc: 0.3045
+[WL-HIERARCHY | squirrel    ] Epoch 040/400  Loss: 31.5552  Acc: 0.3247
+[WL-HIERARCHY | squirrel    ] Epoch 050/400  Loss: 31.3687  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 39.4540  Acc: 0.3170
+[WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 39.2365  Acc: 0.3449
+[WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 39.0556  Acc: 0.3295
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 38.8634  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 38.6799  Acc: 0.3295
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 38.5398  Acc: 0.3343
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 38.3575  Acc: 0.3324
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 38.2486  Acc: 0.3256
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 38.0824  Acc: 0.3256
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 37.9521  Acc: 0.3199
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 37.8193  Acc: 0.3208
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 37.7182  Acc: 0.3208
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 37.6093  Acc: 0.3295
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 37.4928  Acc: 0.3276
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 37.3965  Acc: 0.3276
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 37.3091  Acc: 0.3324
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 37.2319  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 37.1669  Acc: 0.3266
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 37.0987  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 37.0412  Acc: 0.3333
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 36.9905  Acc: 0.3276
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 36.9463  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 36.9078  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 36.8750  Acc: 0.3276
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 36.8477  Acc: 0.3333
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 36.8245  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 36.8059  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 36.7913  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 36.7801  Acc: 0.3256
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 36.7720  Acc: 0.3237
+[WL-HIERARCHY | squirrel    ] Epoch 360/400  Loss: 36.7664  Acc: 0.3247
+[WL-HIERARCHY | squirrel    ] Epoch 370/400  Loss: 36.7630  Acc: 0.3353
+[WL-HIERARCHY | squirrel    ] Epoch 380/400  Loss: 36.7612  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 390/400  Loss: 36.7604  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 400/400  Loss: 36.7603  Acc: 0.3343
+[WL-HIERARCHY | SQUIRREL    ] Best Acc: 0.3449
+[BEST GLOBAL] best_accuracy=0.4044 trial=043ace2e3710
+
+=== [8/40] Trial d5fadf01997e (wl_hierarchy/squirrel) ===
+{
+  "dropout": 0.0,
+  "epochs": 200,
+  "heads": 2,
+  "hidden_dim": 128,
+  "lambda_hier": 0.001,
+  "lambda_nce": 1.0,
+  "lr": 0.0003,
+  "num_layers": 2,
+  "num_negatives": 512,
+  "out_dim": 256,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 40,
+  "weight_decay": 1e-05,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=SQUIRREL | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | squirrel    ] Epoch 010/400  Loss: 10.1520  Acc: 0.2911
+[WL-HIERARCHY | squirrel    ] Epoch 020/400  Loss: 32.0238  Acc: 0.3093
+[WL-HIERARCHY | squirrel    ] Epoch 030/400  Loss: 39.8940  Acc: 0.3189
+[WL-HIERARCHY | squirrel    ] Epoch 040/400  Loss: 39.5533  Acc: 0.3506
+[WL-HIERARCHY | squirrel    ] Epoch 050/400  Loss: 39.2533  Acc: 0.3554
+[WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 39.1357  Acc: 0.3737
+[WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 38.8309  Acc: 0.3775
+[WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 38.6281  Acc: 0.3766
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 38.4939  Acc: 0.3842
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 38.3252  Acc: 0.3862
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 38.2104  Acc: 0.3737
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 38.0760  Acc: 0.3823
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 37.9920  Acc: 0.3919
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 37.8966  Acc: 0.3746
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 37.7773  Acc: 0.3862
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 37.6974  Acc: 0.3852
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 37.6148  Acc: 0.3929
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 37.5331  Acc: 0.3871
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 37.4595  Acc: 0.3996
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 37.3977  Acc: 0.3996
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 37.3392  Acc: 0.4083
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 37.2863  Acc: 0.4035
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 37.2402  Acc: 0.4073
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 37.1971  Acc: 0.4083
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 37.1593  Acc: 0.4054
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 37.1258  Acc: 0.4092
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 37.0965  Acc: 0.4044
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 37.0710  Acc: 0.4044
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 37.0492  Acc: 0.4102
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 37.0308  Acc: 0.4073
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 37.0155  Acc: 0.4083
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 37.0032  Acc: 0.4102
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 36.9934  Acc: 0.4073
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 36.9860  Acc: 0.4063
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 36.9806  Acc: 0.4083
+[WL-HIERARCHY | squirrel    ] Epoch 360/400  Loss: 36.9769  Acc: 0.4025
+[WL-HIERARCHY | squirrel    ] Epoch 370/400  Loss: 36.9746  Acc: 0.4102
+[WL-HIERARCHY | squirrel    ] Epoch 380/400  Loss: 36.9734  Acc: 0.4054
+[WL-HIERARCHY | squirrel    ] Epoch 390/400  Loss: 36.9729  Acc: 0.4063
+[WL-HIERARCHY | squirrel    ] Epoch 400/400  Loss: 36.9728  Acc: 0.4044
+[WL-HIERARCHY | SQUIRREL    ] Best Acc: 0.4102
+[BEST GLOBAL] best_accuracy=0.4102 trial=d5fadf01997e
+
+=== [9/40] Trial 2cdb64057441 (wl_hierarchy/squirrel) ===
+{
+  "dropout": 0.1,
+  "epochs": 300,
+  "heads": 4,
+  "hidden_dim": 512,
+  "lambda_hier": 0.001,
+  "lambda_nce": 0.5,
+  "lr": 0.0003,
+  "num_layers": 4,
+  "num_negatives": 512,
+  "out_dim": 128,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.5,
+  "warmup": 20,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=SQUIRREL | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | squirrel    ] Epoch 010/400  Loss: 23.2172  Acc: 0.2853
+[WL-HIERARCHY | squirrel    ] Epoch 020/400  Loss: 31.1525  Acc: 0.2939
+[WL-HIERARCHY | squirrel    ] Epoch 030/400  Loss: 30.9907  Acc: 0.3160
+[WL-HIERARCHY | squirrel    ] Epoch 040/400  Loss: 30.8936  Acc: 0.3036
+[WL-HIERARCHY | squirrel    ] Epoch 050/400  Loss: 30.7870  Acc: 0.3093
+[WL-HIERARCHY | squirrel    ] Epoch 060/400  Loss: 30.7000  Acc: 0.3160
+[WL-HIERARCHY | squirrel    ] Epoch 070/400  Loss: 30.5992  Acc: 0.3016
+[WL-HIERARCHY | squirrel    ] Epoch 080/400  Loss: 30.5111  Acc: 0.3122
+[WL-HIERARCHY | squirrel    ] Epoch 090/400  Loss: 30.4340  Acc: 0.3112
+[WL-HIERARCHY | squirrel    ] Epoch 100/400  Loss: 30.3645  Acc: 0.3045
+[WL-HIERARCHY | squirrel    ] Epoch 110/400  Loss: 30.2828  Acc: 0.3141
+[WL-HIERARCHY | squirrel    ] Epoch 120/400  Loss: 30.2095  Acc: 0.3208
+[WL-HIERARCHY | squirrel    ] Epoch 130/400  Loss: 30.1390  Acc: 0.3189
+[WL-HIERARCHY | squirrel    ] Epoch 140/400  Loss: 30.0714  Acc: 0.3170
+[WL-HIERARCHY | squirrel    ] Epoch 150/400  Loss: 30.0108  Acc: 0.3132
+[WL-HIERARCHY | squirrel    ] Epoch 160/400  Loss: 29.9502  Acc: 0.3132
+[WL-HIERARCHY | squirrel    ] Epoch 170/400  Loss: 29.8968  Acc: 0.3122
+[WL-HIERARCHY | squirrel    ] Epoch 180/400  Loss: 29.8428  Acc: 0.3199
+[WL-HIERARCHY | squirrel    ] Epoch 190/400  Loss: 29.7949  Acc: 0.3180
+[WL-HIERARCHY | squirrel    ] Epoch 200/400  Loss: 29.7501  Acc: 0.3189
+[WL-HIERARCHY | squirrel    ] Epoch 210/400  Loss: 29.7078  Acc: 0.3199
+[WL-HIERARCHY | squirrel    ] Epoch 220/400  Loss: 29.6697  Acc: 0.3160
+[WL-HIERARCHY | squirrel    ] Epoch 230/400  Loss: 29.6353  Acc: 0.3237
+[WL-HIERARCHY | squirrel    ] Epoch 240/400  Loss: 29.6040  Acc: 0.3256
+[WL-HIERARCHY | squirrel    ] Epoch 250/400  Loss: 29.5757  Acc: 0.3266
+[WL-HIERARCHY | squirrel    ] Epoch 260/400  Loss: 29.5508  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 270/400  Loss: 29.5288  Acc: 0.3285
+[WL-HIERARCHY | squirrel    ] Epoch 280/400  Loss: 29.5099  Acc: 0.3353
+[WL-HIERARCHY | squirrel    ] Epoch 290/400  Loss: 29.4934  Acc: 0.3343
+[WL-HIERARCHY | squirrel    ] Epoch 300/400  Loss: 29.4795  Acc: 0.3362
+[WL-HIERARCHY | squirrel    ] Epoch 310/400  Loss: 29.4681  Acc: 0.3305
+[WL-HIERARCHY | squirrel    ] Epoch 320/400  Loss: 29.4588  Acc: 0.3362
+[WL-HIERARCHY | squirrel    ] Epoch 330/400  Loss: 29.4514  Acc: 0.3314
+[WL-HIERARCHY | squirrel    ] Epoch 340/400  Loss: 29.4458  Acc: 0.3324
+[WL-HIERARCHY | squirrel    ] Epoch 350/400  Loss: 29.4418  Acc: 0.3333
