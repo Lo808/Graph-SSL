@@ -11600,3 +11600,199 @@ Planned candidates: 60
 [WL-DINO | amazon-photo] Epoch 150/500 Loss: 0.9189 Distill: 0.0313 WL_cls_sum: 8.8762 WL_term: 0.8876 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4294 | L_wl_t2: 8.8672, L_wl_t3: 8.8853
 [WL-DINO | amazon-photo] Epoch 160/500 Loss: 0.9174 Distill: 0.0299 WL_cls_sum: 8.8745 WL_term: 0.8874 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4190 | L_wl_t2: 8.8654, L_wl_t3: 8.8836
 [WL-DINO | amazon-photo] Epoch 170/500 Loss: 1.4287 Distill: 0.5413 WL_cls_sum: 8.8742 WL_term: 0.8874 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4176 | L_wl_t2: 8.8651, L_wl_t3: 8.8833
+[WL-DINO | amazon-photo] Epoch 180/500 Loss: 1.2927 Distill: 0.4053 WL_cls_sum: 8.8740 WL_term: 0.8874 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4092 | L_wl_t2: 8.8650, L_wl_t3: 8.8830
+[WL-DINO | amazon-photo] Epoch 190/500 Loss: 1.2826 Distill: 0.3955 WL_cls_sum: 8.8711 WL_term: 0.8871 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3974 | L_wl_t2: 8.8622, L_wl_t3: 8.8800
+[WL-DINO | amazon-photo] Epoch 200/500 Loss: 1.2720 Distill: 0.3851 WL_cls_sum: 8.8691 WL_term: 0.8869 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3928 | L_wl_t2: 8.8602, L_wl_t3: 8.8780
+[WL-DINO | amazon-photo] Epoch 210/500 Loss: 1.2626 Distill: 0.3759 WL_cls_sum: 8.8674 WL_term: 0.8867 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3928 | L_wl_t2: 8.8584, L_wl_t3: 8.8763
+[WL-DINO | amazon-photo] Epoch 220/500 Loss: 1.2571 Distill: 0.3705 WL_cls_sum: 8.8658 WL_term: 0.8866 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3902 | L_wl_t2: 8.8568, L_wl_t3: 8.8747
+[WL-DINO | amazon-photo] Epoch 230/500 Loss: 1.2503 Distill: 0.3639 WL_cls_sum: 8.8642 WL_term: 0.8864 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3922 | L_wl_t2: 8.8553, L_wl_t3: 8.8732
+[WL-DINO | amazon-photo] Epoch 240/500 Loss: 1.2419 Distill: 0.3556 WL_cls_sum: 8.8630 WL_term: 0.8863 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3941 | L_wl_t2: 8.8541, L_wl_t3: 8.8720
+[WL-DINO | amazon-photo] Epoch 250/500 Loss: 1.2273 Distill: 0.3411 WL_cls_sum: 8.8619 WL_term: 0.8862 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.3941 | L_wl_t2: 8.8530, L_wl_t3: 8.8709
+[WL-DINO | amazon-photo] Epoch 260/500 Loss: 1.2171 Distill: 0.3309 WL_cls_sum: 8.8618 WL_term: 0.8862 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4105 | L_wl_t2: 8.8528, L_wl_t3: 8.8707
+[WL-DINO | amazon-photo] Epoch 270/500 Loss: 1.2000 Distill: 0.3139 WL_cls_sum: 8.8613 WL_term: 0.8861 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4137 | L_wl_t2: 8.8524, L_wl_t3: 8.8703
+[WL-DINO | amazon-photo] Epoch 280/500 Loss: 1.1815 Distill: 0.2956 WL_cls_sum: 8.8597 WL_term: 0.8860 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4268 | L_wl_t2: 8.8507, L_wl_t3: 8.8686
+[WL-DINO | amazon-photo] Epoch 290/500 Loss: 1.1585 Distill: 0.2725 WL_cls_sum: 8.8595 WL_term: 0.8859 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4634 | L_wl_t2: 8.8506, L_wl_t3: 8.8683
+[WL-DINO | amazon-photo] Epoch 300/500 Loss: 1.1361 Distill: 0.2500 WL_cls_sum: 8.8608 WL_term: 0.8861 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4203 | L_wl_t2: 8.8520, L_wl_t3: 8.8697
+[WL-DINO | amazon-photo] Epoch 310/500 Loss: 1.1135 Distill: 0.2277 WL_cls_sum: 8.8573 WL_term: 0.8857 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4745 | L_wl_t2: 8.8485, L_wl_t3: 8.8661
+[WL-DINO | amazon-photo] Epoch 320/500 Loss: 1.0755 Distill: 0.1897 WL_cls_sum: 8.8581 WL_term: 0.8858 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4712 | L_wl_t2: 8.8493, L_wl_t3: 8.8668
+[WL-DINO | amazon-photo] Epoch 330/500 Loss: 1.0480 Distill: 0.1624 WL_cls_sum: 8.8558 WL_term: 0.8856 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4686 | L_wl_t2: 8.8470, L_wl_t3: 8.8646
+[WL-DINO | amazon-photo] Epoch 340/500 Loss: 0.9734 Distill: 0.0881 WL_cls_sum: 8.8535 WL_term: 0.8854 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4732 | L_wl_t2: 8.8446, L_wl_t3: 8.8624
+[WL-DINO | amazon-photo] Epoch 350/500 Loss: 0.9282 Distill: 0.0429 WL_cls_sum: 8.8527 WL_term: 0.8853 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4608 | L_wl_t2: 8.8437, L_wl_t3: 8.8617
+[WL-DINO | amazon-photo] Epoch 360/500 Loss: 0.9086 Distill: 0.0234 WL_cls_sum: 8.8524 WL_term: 0.8852 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4673 | L_wl_t2: 8.8434, L_wl_t3: 8.8615
+[WL-DINO | amazon-photo] Epoch 370/500 Loss: 0.9036 Distill: 0.0185 WL_cls_sum: 8.8506 WL_term: 0.8851 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4627 | L_wl_t2: 8.8415, L_wl_t3: 8.8596
+[WL-DINO | amazon-photo] Epoch 380/500 Loss: 0.9046 Distill: 0.0197 WL_cls_sum: 8.8492 WL_term: 0.8849 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4667 | L_wl_t2: 8.8401, L_wl_t3: 8.8583
+[WL-DINO | amazon-photo] Epoch 390/500 Loss: 0.8973 Distill: 0.0125 WL_cls_sum: 8.8484 WL_term: 0.8848 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4752 | L_wl_t2: 8.8392, L_wl_t3: 8.8575
+[WL-DINO | amazon-photo] Epoch 400/500 Loss: 0.8974 Distill: 0.0126 WL_cls_sum: 8.8478 WL_term: 0.8848 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4712 | L_wl_t2: 8.8387, L_wl_t3: 8.8570
+[WL-DINO | amazon-photo] Epoch 410/500 Loss: 0.8944 Distill: 0.0097 WL_cls_sum: 8.8473 WL_term: 0.8847 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4725 | L_wl_t2: 8.8382, L_wl_t3: 8.8565
+[WL-DINO | amazon-photo] Epoch 420/500 Loss: 0.8934 Distill: 0.0087 WL_cls_sum: 8.8470 WL_term: 0.8847 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4725 | L_wl_t2: 8.8378, L_wl_t3: 8.8561
+[WL-DINO | amazon-photo] Epoch 430/500 Loss: 0.8924 Distill: 0.0078 WL_cls_sum: 8.8467 WL_term: 0.8847 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4706 | L_wl_t2: 8.8376, L_wl_t3: 8.8559
+[WL-DINO | amazon-photo] Epoch 440/500 Loss: 0.8948 Distill: 0.0101 WL_cls_sum: 8.8466 WL_term: 0.8847 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4686 | L_wl_t2: 8.8374, L_wl_t3: 8.8557
+[WL-DINO | amazon-photo] Epoch 450/500 Loss: 0.8923 Distill: 0.0076 WL_cls_sum: 8.8465 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4660 | L_wl_t2: 8.8373, L_wl_t3: 8.8556
+[WL-DINO | amazon-photo] Epoch 460/500 Loss: 0.8930 Distill: 0.0083 WL_cls_sum: 8.8464 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4706 | L_wl_t2: 8.8373, L_wl_t3: 8.8556
+[WL-DINO | amazon-photo] Epoch 470/500 Loss: 0.8918 Distill: 0.0072 WL_cls_sum: 8.8464 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4680 | L_wl_t2: 8.8372, L_wl_t3: 8.8556
+[WL-DINO | amazon-photo] Epoch 480/500 Loss: 0.8970 Distill: 0.0124 WL_cls_sum: 8.8464 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4686 | L_wl_t2: 8.8373, L_wl_t3: 8.8556
+[WL-DINO | amazon-photo] Epoch 490/500 Loss: 0.8934 Distill: 0.0087 WL_cls_sum: 8.8464 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4680 | L_wl_t2: 8.8373, L_wl_t3: 8.8556
+[WL-DINO | amazon-photo] Epoch 500/500 Loss: 0.8945 Distill: 0.0098 WL_cls_sum: 8.8464 WL_term: 0.8846 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4686 | L_wl_t2: 8.8373, L_wl_t3: 8.8556
+[WL-DINO | AMAZON-PHOTO] Best Acc: 0.4752
+[BEST amazon-photo] acc=0.7824 trial=2259cb4f4e6b
+
+--- [16/60] Trial 2957ee7e93c0 (amazon-photo) ---
+{
+  "batch_size": 512,
+  "drop_edge_prob": 0.3,
+  "dropout": 0.2,
+  "feature_mask_prob": 0.2,
+  "hidden_dim": 512,
+  "k_feat": 32,
+  "k_wl": 32,
+  "lambda_wl": 0.5,
+  "lr": 0.0001,
+  "m": 0.998,
+  "max_candidates": 96,
+  "num_layers": 2,
+  "out_dim": 128,
+  "scheduler": true,
+  "use_augmentations": false,
+  "weight_decay": 1e-06,
+  "wl_cls_alpha_scheme": "uniform",
+  "wl_cls_levels": "1,2",
+  "wl_depth": 4,
+  "wl_naive_distance_beta": 4.0,
+  "wl_naive_mix_end_alpha": 0.0,
+  "wl_naive_mix_start_frac": 0.7,
+  "wl_naive_pair_sampling": "uniform",
+  "wl_naive_pair_temp_end": 0.3,
+  "wl_naive_pair_temp_start": 0.5
+}
+[WL-DINO] use_max_wl_depth=True -> resolved_wl_depth=3 (cfg.wl_depth=4)
+
+[WL-DINO] Dataset=AMAZON-PHOTO | Model=GIN | objective=bgrl_wl_naive_cls | distill_space=candidate | dual_view_pairs=False | wl_loss_type=align | wl_naive_pair_sampling=uniform | wl_naive_distance_beta=4.000 | adaptive_wl_balance=False | lambda_sup=0.0 | epochs=500 | device=cuda
+
+[WL-DINO] WL-cls settings | levels=1,2 | alpha_scheme=uniform | lambda_wl=0.5
+[WL-DINO | amazon-photo] Epoch 010/500 Loss: 4.9436 Distill: 1.3415 WL_cls_sum: 7.2042 WL_term: 3.6021 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0433 Acc: 0.3974 | L_wl_t1: 5.5028, L_wl_t2: 8.9055
+[WL-DINO | amazon-photo] Epoch 020/500 Loss: 4.5317 Distill: 0.9330 WL_cls_sum: 7.1974 WL_term: 3.5987 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0467 Acc: 0.4967 | L_wl_t1: 5.4924, L_wl_t2: 8.9024
+[WL-DINO | amazon-photo] Epoch 030/500 Loss: 4.2143 Distill: 0.6199 WL_cls_sum: 7.1889 WL_term: 3.5945 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5471 | L_wl_t1: 5.4780, L_wl_t2: 8.8998
+[WL-DINO | amazon-photo] Epoch 040/500 Loss: 3.9873 Distill: 0.3967 WL_cls_sum: 7.1811 WL_term: 3.5906 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5379 | L_wl_t1: 5.4646, L_wl_t2: 8.8977
+[WL-DINO | amazon-photo] Epoch 050/500 Loss: 3.8479 Distill: 0.2617 WL_cls_sum: 7.1725 WL_term: 3.5863 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5451 | L_wl_t1: 5.4500, L_wl_t2: 8.8951
+[WL-DINO | amazon-photo] Epoch 060/500 Loss: 3.7708 Distill: 0.1888 WL_cls_sum: 7.1640 WL_term: 3.5820 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5490 | L_wl_t1: 5.4364, L_wl_t2: 8.8917
+[WL-DINO | amazon-photo] Epoch 070/500 Loss: 3.7279 Distill: 0.1501 WL_cls_sum: 7.1555 WL_term: 3.5777 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5608 | L_wl_t1: 5.4230, L_wl_t2: 8.8880
+[WL-DINO | amazon-photo] Epoch 080/500 Loss: 3.7022 Distill: 0.1292 WL_cls_sum: 7.1460 WL_term: 3.5730 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5719 | L_wl_t1: 5.4087, L_wl_t2: 8.8833
+[WL-DINO | amazon-photo] Epoch 090/500 Loss: 3.6853 Distill: 0.1167 WL_cls_sum: 7.1371 WL_term: 3.5685 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5699 | L_wl_t1: 5.3954, L_wl_t2: 8.8788
+[WL-DINO | amazon-photo] Epoch 100/500 Loss: 3.6703 Distill: 0.1064 WL_cls_sum: 7.1279 WL_term: 3.5640 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5542 | L_wl_t1: 5.3819, L_wl_t2: 8.8740
+[WL-DINO | amazon-photo] Epoch 110/500 Loss: 3.6596 Distill: 0.1001 WL_cls_sum: 7.1190 WL_term: 3.5595 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5503 | L_wl_t1: 5.3680, L_wl_t2: 8.8700
+[WL-DINO | amazon-photo] Epoch 120/500 Loss: 3.6503 Distill: 0.0952 WL_cls_sum: 7.1103 WL_term: 3.5551 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5569 | L_wl_t1: 5.3550, L_wl_t2: 8.8656
+[WL-DINO | amazon-photo] Epoch 130/500 Loss: 3.6435 Distill: 0.0925 WL_cls_sum: 7.1019 WL_term: 3.5509 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5588 | L_wl_t1: 5.3417, L_wl_t2: 8.8620
+[WL-DINO | amazon-photo] Epoch 140/500 Loss: 3.6364 Distill: 0.0896 WL_cls_sum: 7.0936 WL_term: 3.5468 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5601 | L_wl_t1: 5.3296, L_wl_t2: 8.8577
+[WL-DINO | amazon-photo] Epoch 150/500 Loss: 3.6332 Distill: 0.0904 WL_cls_sum: 7.0855 WL_term: 3.5428 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5673 | L_wl_t1: 5.3168, L_wl_t2: 8.8543
+[WL-DINO | amazon-photo] Epoch 160/500 Loss: 3.6289 Distill: 0.0898 WL_cls_sum: 7.0782 WL_term: 3.5391 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5614 | L_wl_t1: 5.3049, L_wl_t2: 8.8514
+[WL-DINO | amazon-photo] Epoch 170/500 Loss: 3.5964 Distill: 0.0597 WL_cls_sum: 7.0734 WL_term: 3.5367 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5745 | L_wl_t1: 5.3052, L_wl_t2: 8.8416
+[WL-DINO | amazon-photo] Epoch 180/500 Loss: 3.5517 Distill: 0.0179 WL_cls_sum: 7.0676 WL_term: 3.5338 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5941 | L_wl_t1: 5.2965, L_wl_t2: 8.8387
+[WL-DINO | amazon-photo] Epoch 190/500 Loss: 3.5431 Distill: 0.0140 WL_cls_sum: 7.0583 WL_term: 3.5291 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5876 | L_wl_t1: 5.2831, L_wl_t2: 8.8334
+[WL-DINO | amazon-photo] Epoch 200/500 Loss: 3.5364 Distill: 0.0111 WL_cls_sum: 7.0507 WL_term: 3.5254 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5869 | L_wl_t1: 5.2718, L_wl_t2: 8.8296
+[WL-DINO | amazon-photo] Epoch 210/500 Loss: 3.5306 Distill: 0.0091 WL_cls_sum: 7.0432 WL_term: 3.5216 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5889 | L_wl_t1: 5.2609, L_wl_t2: 8.8254
+[WL-DINO | amazon-photo] Epoch 220/500 Loss: 3.5264 Distill: 0.0082 WL_cls_sum: 7.0364 WL_term: 3.5182 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5961 | L_wl_t1: 5.2518, L_wl_t2: 8.8210
+[WL-DINO | amazon-photo] Epoch 230/500 Loss: 3.5226 Distill: 0.0076 WL_cls_sum: 7.0300 WL_term: 3.5150 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5915 | L_wl_t1: 5.2430, L_wl_t2: 8.8170
+[WL-DINO | amazon-photo] Epoch 240/500 Loss: 3.5196 Distill: 0.0075 WL_cls_sum: 7.0242 WL_term: 3.5121 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5954 | L_wl_t1: 5.2352, L_wl_t2: 8.8132
+[WL-DINO | amazon-photo] Epoch 250/500 Loss: 3.5166 Distill: 0.0072 WL_cls_sum: 7.0187 WL_term: 3.5093 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6007 | L_wl_t1: 5.2278, L_wl_t2: 8.8096
+[WL-DINO | amazon-photo] Epoch 260/500 Loss: 3.5134 Distill: 0.0066 WL_cls_sum: 7.0134 WL_term: 3.5067 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6039 | L_wl_t1: 5.2210, L_wl_t2: 8.8059
+[WL-DINO | amazon-photo] Epoch 270/500 Loss: 3.5112 Distill: 0.0069 WL_cls_sum: 7.0086 WL_term: 3.5043 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6007 | L_wl_t1: 5.2148, L_wl_t2: 8.8023
+[WL-DINO | amazon-photo] Epoch 280/500 Loss: 3.5085 Distill: 0.0065 WL_cls_sum: 7.0040 WL_term: 3.5020 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6052 | L_wl_t1: 5.2087, L_wl_t2: 8.7994
+[WL-DINO | amazon-photo] Epoch 290/500 Loss: 3.5061 Distill: 0.0062 WL_cls_sum: 6.9998 WL_term: 3.4999 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6033 | L_wl_t1: 5.2033, L_wl_t2: 8.7963
+[WL-DINO | amazon-photo] Epoch 300/500 Loss: 3.5041 Distill: 0.0061 WL_cls_sum: 6.9959 WL_term: 3.4980 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6059 | L_wl_t1: 5.1984, L_wl_t2: 8.7935
+[WL-DINO | amazon-photo] Epoch 310/500 Loss: 3.5020 Distill: 0.0058 WL_cls_sum: 6.9924 WL_term: 3.4962 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6013 | L_wl_t1: 5.1938, L_wl_t2: 8.7909
+[WL-DINO | amazon-photo] Epoch 320/500 Loss: 3.5008 Distill: 0.0062 WL_cls_sum: 6.9891 WL_term: 3.4946 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6000 | L_wl_t1: 5.1897, L_wl_t2: 8.7886
+[WL-DINO | amazon-photo] Epoch 330/500 Loss: 3.4993 Distill: 0.0062 WL_cls_sum: 6.9862 WL_term: 3.4931 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.6020 | L_wl_t1: 5.1860, L_wl_t2: 8.7863
+[WL-DINO | amazon-photo] Epoch 340/500 Loss: 3.4999 Distill: 0.0082 WL_cls_sum: 6.9835 WL_term: 3.4918 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6026 | L_wl_t1: 5.1829, L_wl_t2: 8.7841
+[WL-DINO | amazon-photo] Epoch 350/500 Loss: 3.4997 Distill: 0.0090 WL_cls_sum: 6.9813 WL_term: 3.4907 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6000 | L_wl_t1: 5.1800, L_wl_t2: 8.7827
+[WL-DINO | amazon-photo] Epoch 360/500 Loss: 3.4974 Distill: 0.0077 WL_cls_sum: 6.9793 WL_term: 3.4897 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5993 | L_wl_t1: 5.1776, L_wl_t2: 8.7811
+[WL-DINO | amazon-photo] Epoch 370/500 Loss: 3.4962 Distill: 0.0074 WL_cls_sum: 6.9776 WL_term: 3.4888 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5980 | L_wl_t1: 5.1753, L_wl_t2: 8.7798
+[WL-DINO | amazon-photo] Epoch 380/500 Loss: 3.4962 Distill: 0.0082 WL_cls_sum: 6.9760 WL_term: 3.4880 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5980 | L_wl_t1: 5.1734, L_wl_t2: 8.7786
+[WL-DINO | amazon-photo] Epoch 390/500 Loss: 3.4952 Distill: 0.0079 WL_cls_sum: 6.9747 WL_term: 3.4873 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5987 | L_wl_t1: 5.1717, L_wl_t2: 8.7776
+[WL-DINO | amazon-photo] Epoch 400/500 Loss: 3.4946 Distill: 0.0079 WL_cls_sum: 6.9736 WL_term: 3.4868 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6039 | L_wl_t1: 5.1703, L_wl_t2: 8.7768
+[WL-DINO | amazon-photo] Epoch 410/500 Loss: 3.4942 Distill: 0.0079 WL_cls_sum: 6.9726 WL_term: 3.4863 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6020 | L_wl_t1: 5.1692, L_wl_t2: 8.7760
+[WL-DINO | amazon-photo] Epoch 420/500 Loss: 3.4944 Distill: 0.0085 WL_cls_sum: 6.9719 WL_term: 3.4859 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6013 | L_wl_t1: 5.1683, L_wl_t2: 8.7754
+[WL-DINO | amazon-photo] Epoch 430/500 Loss: 3.4934 Distill: 0.0078 WL_cls_sum: 6.9713 WL_term: 3.4856 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5987 | L_wl_t1: 5.1676, L_wl_t2: 8.7749
+[WL-DINO | amazon-photo] Epoch 440/500 Loss: 3.4933 Distill: 0.0079 WL_cls_sum: 6.9708 WL_term: 3.4854 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5954 | L_wl_t1: 5.1670, L_wl_t2: 8.7746
+[WL-DINO | amazon-photo] Epoch 450/500 Loss: 3.4929 Distill: 0.0077 WL_cls_sum: 6.9705 WL_term: 3.4852 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6020 | L_wl_t1: 5.1666, L_wl_t2: 8.7743
+[WL-DINO | amazon-photo] Epoch 460/500 Loss: 3.4932 Distill: 0.0081 WL_cls_sum: 6.9702 WL_term: 3.4851 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6020 | L_wl_t1: 5.1664, L_wl_t2: 8.7741
+[WL-DINO | amazon-photo] Epoch 470/500 Loss: 3.4934 Distill: 0.0083 WL_cls_sum: 6.9701 WL_term: 3.4850 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5980 | L_wl_t1: 5.1662, L_wl_t2: 8.7740
+[WL-DINO | amazon-photo] Epoch 480/500 Loss: 3.4935 Distill: 0.0084 WL_cls_sum: 6.9700 WL_term: 3.4850 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.5980 | L_wl_t1: 5.1661, L_wl_t2: 8.7739
+[WL-DINO | amazon-photo] Epoch 490/500 Loss: 3.4940 Distill: 0.0090 WL_cls_sum: 6.9700 WL_term: 3.4850 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6000 | L_wl_t1: 5.1661, L_wl_t2: 8.7738
+[WL-DINO | amazon-photo] Epoch 500/500 Loss: 3.4940 Distill: 0.0090 WL_cls_sum: 6.9700 WL_term: 3.4850 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.6013 | L_wl_t1: 5.1661, L_wl_t2: 8.7738
+[WL-DINO | AMAZON-PHOTO] Best Acc: 0.6059
+[BEST amazon-photo] acc=0.7824 trial=2259cb4f4e6b
+
+--- [17/60] Trial 4805e7ca6355 (amazon-photo) ---
+{
+  "batch_size": 512,
+  "drop_edge_prob": 0.1,
+  "dropout": 0.1,
+  "feature_mask_prob": 0.2,
+  "hidden_dim": 256,
+  "k_feat": 32,
+  "k_wl": 32,
+  "lambda_wl": 0.5,
+  "lr": 0.0005,
+  "m": 0.998,
+  "max_candidates": 96,
+  "num_layers": 4,
+  "out_dim": 256,
+  "scheduler": true,
+  "use_augmentations": false,
+  "weight_decay": 0.0001,
+  "wl_cls_alpha_scheme": "shallower_more",
+  "wl_cls_levels": "all",
+  "wl_depth": 4,
+  "wl_naive_distance_beta": 4.0,
+  "wl_naive_mix_end_alpha": 0.2,
+  "wl_naive_mix_start_frac": 0.5,
+  "wl_naive_pair_sampling": "hybrid",
+  "wl_naive_pair_temp_end": 0.1,
+  "wl_naive_pair_temp_start": 0.5
+}
+[WL-DINO] use_max_wl_depth=True -> resolved_wl_depth=3 (cfg.wl_depth=4)
+
+[WL-DINO] Dataset=AMAZON-PHOTO | Model=GIN | objective=bgrl_wl_naive_cls | distill_space=candidate | dual_view_pairs=False | wl_loss_type=align | wl_naive_pair_sampling=hybrid | wl_naive_distance_beta=4.000 | adaptive_wl_balance=False | lambda_sup=0.0 | epochs=500 | device=cuda
+
+[WL-DINO] WL-cls settings | levels=1,2,3 | alpha_scheme=shallower_more | lambda_wl=0.5
+[WL-DINO | amazon-photo] Epoch 010/500 Loss: 3.7149 Distill: 0.1270 WL_cls_sum: 7.1758 WL_term: 3.5879 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0433 Acc: 0.4294 | L_wl_t1: 5.4441, L_wl_t2: 8.9030, L_wl_t3: 8.9167
+[WL-DINO | amazon-photo] Epoch 020/500 Loss: 3.6521 Distill: 0.0865 WL_cls_sum: 7.1310 WL_term: 3.5655 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0467 Acc: 0.4608 | L_wl_t1: 5.3573, L_wl_t2: 8.8999, L_wl_t3: 8.9144
+[WL-DINO | amazon-photo] Epoch 030/500 Loss: 3.6177 Distill: 0.0759 WL_cls_sum: 7.0836 WL_term: 3.5418 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4961 | L_wl_t1: 5.2657, L_wl_t2: 8.8963, L_wl_t3: 8.9120
+[WL-DINO | amazon-photo] Epoch 040/500 Loss: 3.5914 Distill: 0.0731 WL_cls_sum: 7.0366 WL_term: 3.5183 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4980 | L_wl_t1: 5.1749, L_wl_t2: 8.8926, L_wl_t3: 8.9095
+[WL-DINO | amazon-photo] Epoch 050/500 Loss: 3.5663 Distill: 0.0705 WL_cls_sum: 6.9916 WL_term: 3.4958 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.5059 | L_wl_t1: 5.0884, L_wl_t2: 8.8887, L_wl_t3: 8.9069
+[WL-DINO | amazon-photo] Epoch 060/500 Loss: 3.5445 Distill: 0.0705 WL_cls_sum: 6.9481 WL_term: 3.4741 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4980 | L_wl_t1: 5.0055, L_wl_t2: 8.8841, L_wl_t3: 8.9039
+[WL-DINO | amazon-photo] Epoch 070/500 Loss: 3.5250 Distill: 0.0718 WL_cls_sum: 6.9063 WL_term: 3.4531 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4863 | L_wl_t1: 4.9261, L_wl_t2: 8.8793, L_wl_t3: 8.9009
+[WL-DINO | amazon-photo] Epoch 080/500 Loss: 3.5023 Distill: 0.0693 WL_cls_sum: 6.8659 WL_term: 3.4330 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4608 | L_wl_t1: 4.8502, L_wl_t2: 8.8737, L_wl_t3: 8.8974
+[WL-DINO | amazon-photo] Epoch 090/500 Loss: 3.4816 Distill: 0.0682 WL_cls_sum: 6.8267 WL_term: 3.4134 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4595 | L_wl_t1: 4.7776, L_wl_t2: 8.8671, L_wl_t3: 8.8934
+[WL-DINO | amazon-photo] Epoch 100/500 Loss: 3.4624 Distill: 0.0682 WL_cls_sum: 6.7884 WL_term: 3.3942 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4660 | L_wl_t1: 4.7075, L_wl_t2: 8.8596, L_wl_t3: 8.8890
+[WL-DINO | amazon-photo] Epoch 110/500 Loss: 3.4424 Distill: 0.0669 WL_cls_sum: 6.7510 WL_term: 3.3755 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4575 | L_wl_t1: 4.6400, L_wl_t2: 8.8510, L_wl_t3: 8.8840
+[WL-DINO | amazon-photo] Epoch 120/500 Loss: 3.4232 Distill: 0.0659 WL_cls_sum: 6.7147 WL_term: 3.3574 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4556 | L_wl_t1: 4.5756, L_wl_t2: 8.8415, L_wl_t3: 8.8785
+[WL-DINO | amazon-photo] Epoch 130/500 Loss: 3.4036 Distill: 0.0636 WL_cls_sum: 6.6801 WL_term: 3.3401 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4647 | L_wl_t1: 4.5145, L_wl_t2: 8.8321, L_wl_t3: 8.8730
+[WL-DINO | amazon-photo] Epoch 140/500 Loss: 3.3869 Distill: 0.0631 WL_cls_sum: 6.6477 WL_term: 3.3238 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4477 | L_wl_t1: 4.4577, L_wl_t2: 8.8227, L_wl_t3: 8.8676
+[WL-DINO | amazon-photo] Epoch 150/500 Loss: 3.3698 Distill: 0.0610 WL_cls_sum: 6.6175 WL_term: 3.3088 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4399 | L_wl_t1: 4.4051, L_wl_t2: 8.8138, L_wl_t3: 8.8625
+[WL-DINO | amazon-photo] Epoch 160/500 Loss: 3.3546 Distill: 0.0590 WL_cls_sum: 6.5911 WL_term: 3.2956 WL_scale: 1.00 PairCov: 0.989 Sup: 0.0000 Tt: 0.0500 Acc: 0.4137 | L_wl_t1: 4.3588, L_wl_t2: 8.8062, L_wl_t3: 8.8580
+[WL-DINO | amazon-photo] Epoch 170/500 Loss: 3.7042 Distill: 0.4100 WL_cls_sum: 6.5884 WL_term: 3.2942 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4856 | L_wl_t1: 4.3567, L_wl_t2: 8.8021, L_wl_t3: 8.8558
+[WL-DINO | amazon-photo] Epoch 180/500 Loss: 3.5603 Distill: 0.2715 WL_cls_sum: 6.5776 WL_term: 3.2888 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4850 | L_wl_t1: 4.3330, L_wl_t2: 8.8049, L_wl_t3: 8.8567
+[WL-DINO | amazon-photo] Epoch 190/500 Loss: 3.5341 Distill: 0.2601 WL_cls_sum: 6.5480 WL_term: 3.2740 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4706 | L_wl_t1: 4.2806, L_wl_t2: 8.7969, L_wl_t3: 8.8520
+[WL-DINO | amazon-photo] Epoch 200/500 Loss: 3.5159 Distill: 0.2530 WL_cls_sum: 6.5258 WL_term: 3.2629 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4699 | L_wl_t1: 4.2421, L_wl_t2: 8.7903, L_wl_t3: 8.8480
+[WL-DINO | amazon-photo] Epoch 210/500 Loss: 3.5057 Distill: 0.2498 WL_cls_sum: 6.5116 WL_term: 3.2558 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4686 | L_wl_t1: 4.2185, L_wl_t2: 8.7849, L_wl_t3: 8.8445
+[WL-DINO | amazon-photo] Epoch 220/500 Loss: 3.4794 Distill: 0.2288 WL_cls_sum: 6.5012 WL_term: 3.2506 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4876 | L_wl_t1: 4.2015, L_wl_t2: 8.7803, L_wl_t3: 8.8419
+[WL-DINO | amazon-photo] Epoch 230/500 Loss: 3.4479 Distill: 0.2010 WL_cls_sum: 6.4937 WL_term: 3.2469 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5013 | L_wl_t1: 4.1893, L_wl_t2: 8.7772, L_wl_t3: 8.8401
+[WL-DINO | amazon-photo] Epoch 240/500 Loss: 3.4906 Distill: 0.2489 WL_cls_sum: 6.4835 WL_term: 3.2417 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5275 | L_wl_t1: 4.1708, L_wl_t2: 8.7747, L_wl_t3: 8.8392
+[WL-DINO | amazon-photo] Epoch 250/500 Loss: 3.4208 Distill: 0.1889 WL_cls_sum: 6.4637 WL_term: 3.2318 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5131 | L_wl_t1: 4.1354, L_wl_t2: 8.7700, L_wl_t3: 8.8360
+[WL-DINO | amazon-photo] Epoch 260/500 Loss: 3.3998 Distill: 0.1715 WL_cls_sum: 6.4566 WL_term: 3.2283 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5072 | L_wl_t1: 4.1226, L_wl_t2: 8.7683, L_wl_t3: 8.8349
+[WL-DINO | amazon-photo] Epoch 270/500 Loss: 3.4137 Distill: 0.1913 WL_cls_sum: 6.4449 WL_term: 3.2225 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5183 | L_wl_t1: 4.1027, L_wl_t2: 8.7643, L_wl_t3: 8.8326
+[WL-DINO | amazon-photo] Epoch 280/500 Loss: 3.4046 Distill: 0.1891 WL_cls_sum: 6.4309 WL_term: 3.2154 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.5216 | L_wl_t1: 4.0761, L_wl_t2: 8.7628, L_wl_t3: 8.8314
+[WL-DINO | amazon-photo] Epoch 290/500 Loss: 3.3813 Distill: 0.1694 WL_cls_sum: 6.4238 WL_term: 3.2119 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4804 | L_wl_t1: 4.0634, L_wl_t2: 8.7611, L_wl_t3: 8.8303
+[WL-DINO | amazon-photo] Epoch 300/500 Loss: 3.3634 Distill: 0.1532 WL_cls_sum: 6.4204 WL_term: 3.2102 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4941 | L_wl_t1: 4.0572, L_wl_t2: 8.7604, L_wl_t3: 8.8298
+[WL-DINO | amazon-photo] Epoch 310/500 Loss: 3.3643 Distill: 0.1575 WL_cls_sum: 6.4134 WL_term: 3.2067 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4961 | L_wl_t1: 4.0446, L_wl_t2: 8.7590, L_wl_t3: 8.8288
+[WL-DINO | amazon-photo] Epoch 320/500 Loss: 3.3267 Distill: 0.1242 WL_cls_sum: 6.4051 WL_term: 3.2025 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4830 | L_wl_t1: 4.0291, L_wl_t2: 8.7576, L_wl_t3: 8.8281
+[WL-DINO | amazon-photo] Epoch 330/500 Loss: 3.3383 Distill: 0.1387 WL_cls_sum: 6.3993 WL_term: 3.1996 WL_scale: 1.00 PairCov: 0.045 Sup: 0.0000 Tt: 0.0500 Acc: 0.4882 | L_wl_t1: 4.0183, L_wl_t2: 8.7567, L_wl_t3: 8.8275
+[WL-DINO | amazon-photo] Epoch 340/500 Loss: 3.2313 Distill: 0.0351 WL_cls_sum: 6.3924 WL_term: 3.1962 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4895 | L_wl_t1: 4.0059, L_wl_t2: 8.7552, L_wl_t3: 8.8264
+[WL-DINO | amazon-photo] Epoch 350/500 Loss: 3.2265 Distill: 0.0329 WL_cls_sum: 6.3872 WL_term: 3.1936 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4908 | L_wl_t1: 3.9961, L_wl_t2: 8.7544, L_wl_t3: 8.8259
+[WL-DINO | amazon-photo] Epoch 360/500 Loss: 3.2180 Distill: 0.0264 WL_cls_sum: 6.3831 WL_term: 3.1916 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4869 | L_wl_t1: 3.9888, L_wl_t2: 8.7535, L_wl_t3: 8.8253
+[WL-DINO | amazon-photo] Epoch 370/500 Loss: 3.2133 Distill: 0.0234 WL_cls_sum: 6.3798 WL_term: 3.1899 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4850 | L_wl_t1: 3.9826, L_wl_t2: 8.7530, L_wl_t3: 8.8249
+[WL-DINO | amazon-photo] Epoch 380/500 Loss: 3.2077 Distill: 0.0194 WL_cls_sum: 6.3766 WL_term: 3.1883 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4771 | L_wl_t1: 3.9768, L_wl_t2: 8.7523, L_wl_t3: 8.8245
+[WL-DINO | amazon-photo] Epoch 390/500 Loss: 3.2039 Distill: 0.0169 WL_cls_sum: 6.3740 WL_term: 3.1870 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4765 | L_wl_t1: 3.9720, L_wl_t2: 8.7518, L_wl_t3: 8.8242
+[WL-DINO | amazon-photo] Epoch 400/500 Loss: 3.2031 Distill: 0.0172 WL_cls_sum: 6.3717 WL_term: 3.1858 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4706 | L_wl_t1: 3.9679, L_wl_t2: 8.7513, L_wl_t3: 8.8238
+[WL-DINO | amazon-photo] Epoch 410/500 Loss: 3.2012 Distill: 0.0164 WL_cls_sum: 6.3696 WL_term: 3.1848 WL_scale: 1.00 PairCov: 0.029 Sup: 0.0000 Tt: 0.0500 Acc: 0.4680 | L_wl_t1: 3.9642, L_wl_t2: 8.7508, L_wl_t3: 8.8236

@@ -245,3 +245,55 @@ Planned candidates: 40
 [WL-HIERARCHY | amazon-photo] Epoch 210/400  Loss: 37.8424  Acc: 0.7569
 [WL-HIERARCHY | amazon-photo] Epoch 220/400  Loss: 37.8326  Acc: 0.7575
 [WL-HIERARCHY | amazon-photo] Epoch 230/400  Loss: 37.8243  Acc: 0.7614
+[WL-HIERARCHY | amazon-photo] Epoch 240/400  Loss: 37.8129  Acc: 0.7647
+[WL-HIERARCHY | amazon-photo] Epoch 250/400  Loss: 37.8038  Acc: 0.7693
+[WL-HIERARCHY | amazon-photo] Epoch 260/400  Loss: 37.7974  Acc: 0.7621
+[WL-HIERARCHY | amazon-photo] Epoch 270/400  Loss: 37.7909  Acc: 0.7614
+[WL-HIERARCHY | amazon-photo] Epoch 280/400  Loss: 37.7855  Acc: 0.7582
+[WL-HIERARCHY | amazon-photo] Epoch 290/400  Loss: 37.7809  Acc: 0.7536
+[WL-HIERARCHY | amazon-photo] Epoch 300/400  Loss: 37.7771  Acc: 0.7471
+[WL-HIERARCHY | amazon-photo] Epoch 310/400  Loss: 37.7739  Acc: 0.7588
+[WL-HIERARCHY | amazon-photo] Epoch 320/400  Loss: 37.7714  Acc: 0.7549
+[WL-HIERARCHY | amazon-photo] Epoch 330/400  Loss: 37.7694  Acc: 0.7608
+[WL-HIERARCHY | amazon-photo] Epoch 340/400  Loss: 37.7678  Acc: 0.7556
+[WL-HIERARCHY | amazon-photo] Epoch 350/400  Loss: 37.7667  Acc: 0.7627
+[WL-HIERARCHY | amazon-photo] Epoch 360/400  Loss: 37.7660  Acc: 0.7588
+[WL-HIERARCHY | amazon-photo] Epoch 370/400  Loss: 37.7655  Acc: 0.7686
+[WL-HIERARCHY | amazon-photo] Epoch 380/400  Loss: 37.7652  Acc: 0.7680
+[WL-HIERARCHY | amazon-photo] Epoch 390/400  Loss: 37.7651  Acc: 0.7712
+[WL-HIERARCHY | amazon-photo] Epoch 400/400  Loss: 37.7651  Acc: 0.7706
+[WL-HIERARCHY | AMAZON-PHOTO] Best Acc: 0.8007
+[BEST GLOBAL] best_accuracy=0.8961 trial=3f16b83203fb
+
+=== [5/40] Trial 754ccea7c096 (wl_hierarchy/amazon-photo) ===
+{
+  "dropout": 0.2,
+  "epochs": 300,
+  "heads": 8,
+  "hidden_dim": 128,
+  "lambda_hier": 0.001,
+  "lambda_nce": 1.0,
+  "lr": 0.001,
+  "num_layers": 3,
+  "num_negatives": 512,
+  "out_dim": 64,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 1e-06,
+  "wl_max_iter": 10
+}
+
+[WL-HIERARCHY] Dataset=AMAZON-PHOTO | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | amazon-photo] Epoch 010/400  Loss: 44.9932  Acc: 0.4608
+[WL-HIERARCHY | amazon-photo] Epoch 020/400  Loss: 53.5832  Acc: 0.5523
+[WL-HIERARCHY | amazon-photo] Epoch 030/400  Loss: 53.1146  Acc: 0.6582
+[WL-HIERARCHY | amazon-photo] Epoch 040/400  Loss: 52.8775  Acc: 0.7588
+[WL-HIERARCHY | amazon-photo] Epoch 050/400  Loss: 52.6074  Acc: 0.8163
+[WL-HIERARCHY | amazon-photo] Epoch 060/400  Loss: 52.4362  Acc: 0.8072
+[WL-HIERARCHY | amazon-photo] Epoch 070/400  Loss: 52.2169  Acc: 0.8190
+[WL-HIERARCHY | amazon-photo] Epoch 080/400  Loss: 52.0480  Acc: 0.8301
+[WL-HIERARCHY | amazon-photo] Epoch 090/400  Loss: 51.8727  Acc: 0.8183
+[WL-HIERARCHY | amazon-photo] Epoch 100/400  Loss: 51.7077  Acc: 0.8235

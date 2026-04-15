@@ -324,3 +324,59 @@ Planned candidates: 40
 [WL-HIERARCHY | citeseer    ] Epoch 350/400  Loss: 48.9141  Acc: 0.3290
 [WL-HIERARCHY | citeseer    ] Epoch 360/400  Loss: 48.8994  Acc: 0.3330
 [WL-HIERARCHY | citeseer    ] Epoch 370/400  Loss: 48.8903  Acc: 0.3300
+[WL-HIERARCHY | citeseer    ] Epoch 380/400  Loss: 48.8855  Acc: 0.3300
+[WL-HIERARCHY | citeseer    ] Epoch 390/400  Loss: 48.8836  Acc: 0.3300
+[WL-HIERARCHY | citeseer    ] Epoch 400/400  Loss: 48.8832  Acc: 0.3350
+[WL-HIERARCHY | CITESEER    ] Best Acc: 0.3560
+[BEST GLOBAL] best_accuracy=0.4090 trial=3bf77b90474d
+
+=== [6/40] Trial 8fae7eb82788 (wl_hierarchy/citeseer) ===
+{
+  "dropout": 0.0,
+  "epochs": 400,
+  "heads": 8,
+  "hidden_dim": 128,
+  "lambda_hier": 0.01,
+  "lambda_nce": 1.0,
+  "lr": 0.0003,
+  "num_layers": 3,
+  "num_negatives": 512,
+  "out_dim": 256,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=CITESEER | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | citeseer    ] Epoch 010/400  Loss: 42.1844  Acc: 0.2420
+[WL-HIERARCHY | citeseer    ] Epoch 020/400  Loss: 57.1507  Acc: 0.2540
+[WL-HIERARCHY | citeseer    ] Epoch 030/400  Loss: 56.7700  Acc: 0.2820
+[WL-HIERARCHY | citeseer    ] Epoch 040/400  Loss: 56.4822  Acc: 0.3070
+[WL-HIERARCHY | citeseer    ] Epoch 050/400  Loss: 56.2238  Acc: 0.3290
+[WL-HIERARCHY | citeseer    ] Epoch 060/400  Loss: 55.9809  Acc: 0.3560
+[WL-HIERARCHY | citeseer    ] Epoch 070/400  Loss: 55.7470  Acc: 0.3670
+[WL-HIERARCHY | citeseer    ] Epoch 080/400  Loss: 55.5255  Acc: 0.3690
+[WL-HIERARCHY | citeseer    ] Epoch 090/400  Loss: 55.3054  Acc: 0.3350
+[WL-HIERARCHY | citeseer    ] Epoch 100/400  Loss: 55.0918  Acc: 0.3310
+[WL-HIERARCHY | citeseer    ] Epoch 110/400  Loss: 54.8881  Acc: 0.3260
+[WL-HIERARCHY | citeseer    ] Epoch 120/400  Loss: 54.6889  Acc: 0.3180
+[WL-HIERARCHY | citeseer    ] Epoch 130/400  Loss: 54.4967  Acc: 0.3170
+[WL-HIERARCHY | citeseer    ] Epoch 140/400  Loss: 54.3149  Acc: 0.3150
+[WL-HIERARCHY | citeseer    ] Epoch 150/400  Loss: 54.1386  Acc: 0.3150
+[WL-HIERARCHY | citeseer    ] Epoch 160/400  Loss: 53.9704  Acc: 0.3150
+[WL-HIERARCHY | citeseer    ] Epoch 170/400  Loss: 53.8122  Acc: 0.3050
+[WL-HIERARCHY | citeseer    ] Epoch 180/400  Loss: 53.6636  Acc: 0.3090
+[WL-HIERARCHY | citeseer    ] Epoch 190/400  Loss: 53.5234  Acc: 0.3020
+[WL-HIERARCHY | citeseer    ] Epoch 200/400  Loss: 53.3934  Acc: 0.3000
+[WL-HIERARCHY | citeseer    ] Epoch 210/400  Loss: 53.2728  Acc: 0.3000
+[WL-HIERARCHY | citeseer    ] Epoch 220/400  Loss: 53.1619  Acc: 0.3000
+[WL-HIERARCHY | citeseer    ] Epoch 230/400  Loss: 53.0607  Acc: 0.2980
+[WL-HIERARCHY | citeseer    ] Epoch 240/400  Loss: 52.9689  Acc: 0.2960
+[WL-HIERARCHY | citeseer    ] Epoch 250/400  Loss: 52.8865  Acc: 0.2950
+[WL-HIERARCHY | citeseer    ] Epoch 260/400  Loss: 52.8131  Acc: 0.2960
+[WL-HIERARCHY | citeseer    ] Epoch 270/400  Loss: 52.7485  Acc: 0.2930
+[WL-HIERARCHY | citeseer    ] Epoch 280/400  Loss: 52.6923  Acc: 0.2940

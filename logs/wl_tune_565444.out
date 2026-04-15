@@ -2208,3 +2208,70 @@ Planned candidates: 40
 [WL-HIERARCHY | cora        ] Epoch 340/400  Loss: 59.2784  Acc: 0.3340
 [WL-HIERARCHY | cora        ] Epoch 350/400  Loss: 59.2761  Acc: 0.3370
 [WL-HIERARCHY | cora        ] Epoch 360/400  Loss: 59.2746  Acc: 0.3260
+[WL-HIERARCHY | cora        ] Epoch 370/400  Loss: 59.2736  Acc: 0.3300
+[WL-HIERARCHY | cora        ] Epoch 380/400  Loss: 59.2731  Acc: 0.3340
+[WL-HIERARCHY | cora        ] Epoch 390/400  Loss: 59.2729  Acc: 0.3370
+[WL-HIERARCHY | cora        ] Epoch 400/400  Loss: 59.2729  Acc: 0.3340
+[WL-HIERARCHY | CORA        ] Best Acc: 0.4720
+[BEST GLOBAL] best_accuracy=0.6080 trial=034922e9ac21
+
+=== [35/40] Trial 14a1398ea7a2 (wl_hierarchy/cora) ===
+{
+  "dropout": 0.1,
+  "epochs": 300,
+  "heads": 2,
+  "hidden_dim": 256,
+  "lambda_hier": 0.01,
+  "lambda_nce": 0.5,
+  "lr": 0.0001,
+  "num_layers": 3,
+  "num_negatives": 256,
+  "out_dim": 64,
+  "scheduler": true,
+  "tau": 2.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=CORA | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | cora        ] Epoch 010/400  Loss: 31.1228  Acc: 0.2090
+[WL-HIERARCHY | cora        ] Epoch 020/400  Loss: 46.7398  Acc: 0.1980
+[WL-HIERARCHY | cora        ] Epoch 030/400  Loss: 46.5473  Acc: 0.2460
+[WL-HIERARCHY | cora        ] Epoch 040/400  Loss: 46.4046  Acc: 0.3540
+[WL-HIERARCHY | cora        ] Epoch 050/400  Loss: 46.2881  Acc: 0.4610
+[WL-HIERARCHY | cora        ] Epoch 060/400  Loss: 46.1883  Acc: 0.4910
+[WL-HIERARCHY | cora        ] Epoch 070/400  Loss: 46.0996  Acc: 0.4570
+[WL-HIERARCHY | cora        ] Epoch 080/400  Loss: 46.0228  Acc: 0.4480
+[WL-HIERARCHY | cora        ] Epoch 090/400  Loss: 45.9554  Acc: 0.4230
+[WL-HIERARCHY | cora        ] Epoch 100/400  Loss: 45.8983  Acc: 0.4180
+[WL-HIERARCHY | cora        ] Epoch 110/400  Loss: 45.8459  Acc: 0.3780
+[WL-HIERARCHY | cora        ] Epoch 120/400  Loss: 45.7987  Acc: 0.3650
+[WL-HIERARCHY | cora        ] Epoch 130/400  Loss: 45.7570  Acc: 0.3480
+[WL-HIERARCHY | cora        ] Epoch 140/400  Loss: 45.7175  Acc: 0.3420
+[WL-HIERARCHY | cora        ] Epoch 150/400  Loss: 45.6812  Acc: 0.3370
+[WL-HIERARCHY | cora        ] Epoch 160/400  Loss: 45.6482  Acc: 0.3410
+[WL-HIERARCHY | cora        ] Epoch 170/400  Loss: 45.6174  Acc: 0.3340
+[WL-HIERARCHY | cora        ] Epoch 180/400  Loss: 45.5884  Acc: 0.3340
+[WL-HIERARCHY | cora        ] Epoch 190/400  Loss: 45.5621  Acc: 0.3330
+[WL-HIERARCHY | cora        ] Epoch 200/400  Loss: 45.5381  Acc: 0.3290
+[WL-HIERARCHY | cora        ] Epoch 210/400  Loss: 45.5161  Acc: 0.3170
+[WL-HIERARCHY | cora        ] Epoch 220/400  Loss: 45.4961  Acc: 0.3180
+[WL-HIERARCHY | cora        ] Epoch 230/400  Loss: 45.4780  Acc: 0.3220
+[WL-HIERARCHY | cora        ] Epoch 240/400  Loss: 45.4618  Acc: 0.3170
+[WL-HIERARCHY | cora        ] Epoch 250/400  Loss: 45.4472  Acc: 0.3070
+[WL-HIERARCHY | cora        ] Epoch 260/400  Loss: 45.4344  Acc: 0.3140
+[WL-HIERARCHY | cora        ] Epoch 270/400  Loss: 45.4231  Acc: 0.3040
+[WL-HIERARCHY | cora        ] Epoch 280/400  Loss: 45.4133  Acc: 0.3070
+[WL-HIERARCHY | cora        ] Epoch 290/400  Loss: 45.4049  Acc: 0.3070
+[WL-HIERARCHY | cora        ] Epoch 300/400  Loss: 45.3978  Acc: 0.3130
+[WL-HIERARCHY | cora        ] Epoch 310/400  Loss: 45.3919  Acc: 0.3130
+[WL-HIERARCHY | cora        ] Epoch 320/400  Loss: 45.3871  Acc: 0.3090
+[WL-HIERARCHY | cora        ] Epoch 330/400  Loss: 45.3833  Acc: 0.3070
+[WL-HIERARCHY | cora        ] Epoch 340/400  Loss: 45.3804  Acc: 0.3050
+[WL-HIERARCHY | cora        ] Epoch 350/400  Loss: 45.3783  Acc: 0.3090
+[WL-HIERARCHY | cora        ] Epoch 360/400  Loss: 45.3769  Acc: 0.3090
+[WL-HIERARCHY | cora        ] Epoch 370/400  Loss: 45.3760  Acc: 0.3120
+[WL-HIERARCHY | cora        ] Epoch 380/400  Loss: 45.3755  Acc: 0.3080

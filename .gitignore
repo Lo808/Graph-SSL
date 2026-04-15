@@ -8,3 +8,6 @@ venv/
 
 # --- Datasets---
 data/
+
+# --- Logs ---
+logs/
