@@ -1,3 +1,0 @@
-Matplotlib is building the font cache; this may take a moment.
-/gpfs/workdir/yartaouifa/.conda/envs/env_gssl/lib/python3.10/runpy.py:126: RuntimeWarning: 'wl_gcl.experiments.wl_dino.tune_wl_dino' found in sys.modules after import of package 'wl_gcl.experiments.wl_dino', but prior to execution of 'wl_gcl.experiments.wl_dino.tune_wl_dino'; this may result in unpredictable behaviour
-  warn(RuntimeWarning(msg))
