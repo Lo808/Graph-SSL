@@ -1,0 +1,39 @@
+Démarrage du tuning WL-Hierarchy à Wed Apr 15 10:13:40 CEST 2026
+------------------------------------------------
+Début du tuning pour : amazon-photo
+------------------------------------------------
+Existing trials in results.jsonl: 10
+Planned candidates: 40
+
+=== [1/40] Trial 854973b72e9c (wl_hierarchy/amazon-photo) ===
+{
+  "dropout": 0.0,
+  "epochs": 400,
+  "heads": 2,
+  "hidden_dim": 128,
+  "lambda_hier": 0.01,
+  "lambda_nce": 1.0,
+  "lr": 0.0003,
+  "num_layers": 4,
+  "num_negatives": 128,
+  "out_dim": 128,
+  "scheduler": true,
+  "tau": 1.0,
+  "temperature": 0.2,
+  "warmup": 20,
+  "weight_decay": 0.0001,
+  "wl_max_iter": 5
+}
+
+[WL-HIERARCHY] Dataset=AMAZON-PHOTO | Model=GIN | epochs=400 | device=cuda
+
+[WL-HIERARCHY | amazon-photo] Epoch 010/400  Loss: 45.2078  Acc: 0.4673
+[WL-HIERARCHY | amazon-photo] Epoch 020/400  Loss: 53.7327  Acc: 0.5314
+[WL-HIERARCHY | amazon-photo] Epoch 030/400  Loss: 53.3829  Acc: 0.6477
+[WL-HIERARCHY | amazon-photo] Epoch 040/400  Loss: 53.0781  Acc: 0.7085
+[WL-HIERARCHY | amazon-photo] Epoch 050/400  Loss: 52.9721  Acc: 0.7699
+[WL-HIERARCHY | amazon-photo] Epoch 060/400  Loss: 52.7717  Acc: 0.7843
+[WL-HIERARCHY | amazon-photo] Epoch 070/400  Loss: 52.7058  Acc: 0.8340
+[WL-HIERARCHY | amazon-photo] Epoch 080/400  Loss: 52.5781  Acc: 0.8405
+[WL-HIERARCHY | amazon-photo] Epoch 090/400  Loss: 52.4747  Acc: 0.8431
+[WL-HIERARCHY | amazon-photo] Epoch 100/400  Loss: 52.4270  Acc: 0.8490
